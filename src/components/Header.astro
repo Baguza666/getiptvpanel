@@ -1,0 +1,49 @@
+---
+---
+<header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/80 border-b border-white/10 w-full">
+  <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+    <a href="/" class="text-white font-bold text-2xl font-['Clash_Display'] tracking-tight">GetIPTVPanel</a>
+    
+    <nav class="hidden md:flex gap-6 items-center font-medium">
+      <a href="/" class="text-gray-300 hover:text-white transition-colors">Accueil</a>
+      <a href="/guide-panel-revendeur" class="text-gray-300 hover:text-white transition-colors">Guide Revendeur</a>
+      <a href="/meilleur-fournisseur-iptv" class="text-gray-300 hover:text-white transition-colors">Notre Infrastructure</a>
+      <a href="/ressources" class="text-gray-300 hover:text-white transition-colors">Ressources</a>
+    </nav>
+    
+    <div class="flex items-center gap-3">
+      <a href="/contact" class="bg-coral text-white px-5 md:px-6 py-2.5 rounded-lg font-bold hover:bg-coral/90 transition-colors text-sm shadow-lg shadow-coral/20">
+        Contact
+      </a>
+      
+      <!-- Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Ouvrir le menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <nav id="mobile-menu" class="hidden flex-col bg-[#111116] border-b border-white/10 px-4 py-2 md:hidden absolute top-full left-0 w-full shadow-2xl">
+    <a href="/" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Accueil</a>
+    <a href="/guide-panel-revendeur" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Guide Revendeur</a>
+    <a href="/meilleur-fournisseur-iptv" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Notre Infrastructure</a>
+    <a href="/ressources" class="text-gray-300 hover:text-white transition-colors py-4 block font-medium text-lg">Ressources</a>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+      });
+    }
+  });
+</script>

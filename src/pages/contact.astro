@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contactez GetIPTVPanel | Support Revendeur"
+  description="Contactez notre équipe de support technique et commercial."
+>
+  <main class="w-full relative overflow-hidden pt-32 pb-20">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald opacity-10 blur-[130px] rounded-full pointer-events-none"></div>
+
+    <section class="max-w-4xl mx-auto px-4 relative z-10 text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold font-['Clash_Display'] mb-6">
+        Discutons de votre projet de revente
+      </h1>
+      <p class="text-xl text-gray-400">
+        Notre équipe d'experts est disponible pour vous accompagner, que ce soit pour une simple question technique ou pour commander votre Pack VIP.
+      </p>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12">
+        
+        <!-- Interactive WhatsApp CTA Block -->
+        <div class="flex flex-col justify-center">
+          <div class="glass p-10 rounded-2xl text-center shadow-lg shadow-emerald/10 border-t border-emerald/20 transition-transform hover:scale-[1.02]">
+            <div class="w-20 h-20 bg-emerald/20 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+              💬
+            </div>
+            <h2 class="text-2xl font-bold font-['Clash_Display'] mb-4 text-white">Le Moyen le Plus Rapide</h2>
+            <p class="text-gray-400 mb-8">
+              Nous répondons généralement en moins de 15 minutes sur WhatsApp durant nos horaires d'ouverture (9h00 - 23h00).
+            </p>
+            <a href="https://wa.me/YOURNUMBER" class="inline-flex items-center gap-2 bg-emerald hover:bg-emerald/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-emerald/20 w-full justify-center">
+              Lancer la discussion
+            </a>
+          </div>
+        </div>
+
+        <!-- Classic Native Form -->
+        <div class="glass p-8 md:p-10 rounded-2xl">
+          <h2 class="text-2xl font-bold font-['Clash_Display'] mb-6 text-white text-center">Envoyez-nous un message</h2>
+          <form class="space-y-5" onsubmit="event.preventDefault(); alert('Ce formulaire est une démonstration. Veuillez utiliser WhatsApp.');">
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Nom complet</label>
+              <input type="text" required class="w-full bg-obsidian border border-white/10 rounded-lg p-3 text-white focus:border-indigo outline-none transition-colors" placeholder="Votre nom" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Adresse E-mail</label>
+              <input type="email" required class="w-full bg-obsidian border border-white/10 rounded-lg p-3 text-white focus:border-indigo outline-none transition-colors" placeholder="email@exemple.com" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Sujet</label>
+              <select class="w-full bg-obsidian border border-white/10 rounded-lg p-3 text-white focus:border-indigo outline-none transition-colors">
+                <option>Achat de crédits / Codes en Gros</option>
+                <option>Test gratuit 24h</option>
+                <option>Problème technique (Panel)</option>
+                <option>Autre question</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+              <textarea required rows="4" class="w-full bg-obsidian border border-white/10 rounded-lg p-3 text-white focus:border-indigo outline-none transition-colors resize-none" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-indigo hover:bg-indigo/90 text-white py-3.5 rounded-lg font-bold transition-colors">
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</Layout>

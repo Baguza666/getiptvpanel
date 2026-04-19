@@ -1,0 +1,65 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title = "Devenir Revendeur IPTV : Le Panel N°1 pour Lancer Votre Business", 
+  description = "GetIPTVPanel: L'infrastructure la plus stable du marché francophone. Technologie Anti-FAI, +20 000 chaînes 4K, panneau de contrôle automatisé.",
+  noindex = false
+} = Astro.props;
+
+// JSON-LD Schema structured data
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "GetIPTVPanel",
+      "url": "https://getiptvpanel.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'un crédit sur le panel ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un crédit correspond à un abonnement de 12 mois pour un client." }
+        },
+        {
+          "@type": "Question",
+          "name": "Les tests de 24 heures sont-ils payants ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non, avec GetIPTVPanel, vous pouvez générer un nombre illimité de codes de test de 24h sans consommer vos crédits." }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title={title} description={description} schema={JSON.stringify(schema)} noindex={noindex} />
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-obsidian text-white font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
+    <Header />
+    <div class="flex-grow">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

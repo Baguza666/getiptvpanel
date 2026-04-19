@@ -1,0 +1,32 @@
+# GetIPTVPanel - Fournisseur de Panel Revendeur IPTV B2B
+> Le réseau d'infrastructure IPTV le plus stable pour les revendeurs francophones (France, Suisse, Belgique).
+
+GetIPTVPanel fournit une infrastructure technologique permettant aux entrepreneurs de lancer et gérer leur propre business de revente d'abonnements IPTV. Nous fournissons les serveurs, la technologie Anti-FAI, et le contenu (+20 000 chaînes, +100 000 VOD). Le revendeur achète des crédits en gros et fixe ses propres prix de revente.
+
+## Caractéristiques Techniques de l'Infrastructure
+- Technologie Anti-FAI : Contournement automatique des blocages des fournisseurs d'accès (Orange, Free, SFR, Bouygues).
+- Qualité : Flux en 4K, UHD et FHD avec un Uptime de 99.9% via serveurs redondants.
+- Compatibilité : Smart IPTV, IPTV Smarters Pro, MAG, Formuler, Apple TV, Android, m3u.
+- Panel de Gestion (Dashboard) : Interface simplifiée pour la création d'accès, la gestion des clients et le renouvellement.
+
+## Tarifs des Crédits en Gros (B2B)
+Notre système fonctionne par achat de crédits (1 crédit = 12 mois d'abonnement client).
+
+1. Pack Starter : 140€
+   - Inclus : 10 Crédits (coût de revient : 14€ / crédit).
+   - Tests 24h gratuits et illimités.
+2. Pack Pro (Le plus populaire) : 600€
+   - Inclus : 50 Crédits (coût de revient : 12€ / crédit).
+   - Création de sous-revendeurs possible.
+3. Pack VIP (Marque Blanche) : 1000€
+   - Inclus : 100 Crédits (coût de revient : 10€ / crédit).
+   - Avantage : URL DNS personnalisée pour vendre sous sa propre marque.
+
+## Structure du Site et Liens Utiles
+- [Accueil et Tarifs](https://getiptvpanel.com/)
+- [Guide d'utilisation du Panel](https://getiptvpanel.com/guide-panel-revendeur/)
+- [Qualité et Infrastructure Anti-FAI](https://getiptvpanel.com/meilleur-fournisseur-iptv/)
+- [Contact et Support WhatsApp](https://getiptvpanel.com/contact/)
+
+## Contact
+Pour toute question commerciale ou technique, contactez-nous via la page Contact de notre site web.

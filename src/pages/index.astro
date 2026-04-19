@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RoiCalculator from '../components/react/RoiCalculator.tsx';
+---
+
+<Layout>
+  <main class="w-full relative overflow-x-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-4 max-w-7xl mx-auto text-center">
+      <h1 class="text-5xl md:text-7xl font-bold font-['Clash_Display'] mb-6 leading-tight">
+        Devenez Revendeur IPTV : <br/> Le Panel N°1 pour Lancer Votre Business
+      </h1>
+      <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
+        Prenez le contrôle de vos revenus avec GetIPTVPanel, l'infrastructure la plus stable du marché francophone. Nous vous fournissons la technologie (Anti-FAI), le contenu (+20 000 chaînes 4K, +100 000 VOD) et un tableau de bord intuitif. Vous achetez vos crédits en gros, vous fixez vos prix de revente, et vous conservez 100% de vos bénéfices.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#pricing" class="bg-coral hover:bg-coral/90 text-white px-8 py-4 rounded-lg font-bold transition-colors">
+          Voir les Tarifs Revendeur
+        </a>
+        <a href="https://wa.me/YOURNUMBER" class="glass text-white px-8 py-4 rounded-lg font-bold transition-colors">
+          Discuter sur WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-6">
+          Simulateur de Rentabilité : Combien gagne un Revendeur IPTV ?
+        </h2>
+        <p class="text-gray-400 text-lg mb-6">
+          Le business model est simple : plus vous achetez de crédits, plus votre coût unitaire baisse, et plus votre marge explose. Utilisez notre calculateur interactif pour estimer vos profits mensuels en fonction du prix de vente que vous fixez à vos clients.
+        </p>
+        <ul class="space-y-4 text-gray-400">
+          <li class="flex items-center gap-3">
+            <span class="text-emerald">✓</span> Un crédit GetIPTVPanel = 12 mois d'abonnement.
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-emerald">✓</span> Vous pouvez également générer des accès de 1, 3 ou 6 mois.
+          </li>
+        </ul>
+      </div>
+      
+      <div class="relative z-10 w-full">
+        <RoiCalculator client:load />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
+          Une Infrastructure Premium pour Fidéliser vos Clients
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Pour réussir en tant que fournisseur IPTV, la qualité du flux est votre seul argument de vente. GetIPTVPanel est conçu pour éliminer les coupures et garantir une satisfaction totale.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <article class="glass rounded-xl p-8 md:col-span-2 md:row-span-2 flex flex-col justify-center">
+          <div class="w-12 h-12 bg-indigo/20 rounded-lg flex items-center justify-center mb-6 border border-indigo/30 text-2xl">🛡️</div>
+          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Technologie Anti-FAI Intégrée</h3>
+          <p class="text-gray-400">Contournement automatique des blocages des fournisseurs d'accès (Orange, Free, SFR, Bouygues) lors des grands événements sportifs.</p>
+        </article>
+
+        <article class="glass rounded-xl p-8 md:col-span-2">
+          <div class="w-12 h-12 bg-emerald/20 rounded-lg flex items-center justify-center mb-6 border border-emerald/30 text-2xl">📺</div>
+          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Qualité 4K, UHD et FHD</h3>
+          <p class="text-gray-400">Plus de 20 000 chaînes en direct avec des serveurs redondants assurant un Uptime garanti de 99.9%.</p>
+        </article>
+
+        <article class="glass rounded-xl p-8 md:col-span-1">
+          <div class="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mb-6 border border-coral/30 text-2xl">🎬</div>
+          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">VOD Quotidienne</h3>
+          <p class="text-gray-400 text-sm">Catalogue de +100 000 films et séries (Netflix, Prime, Disney+) actualisé.</p>
+        </article>
+
+        <article class="glass rounded-xl p-8 md:col-span-1">
+          <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 border border-white/20 text-2xl">📱</div>
+          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Multi-Supports</h3>
+          <p class="text-gray-400 text-sm">Compatibles avec Smart IPTV, Smarters Pro, Apple TV, Android et m3u.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
+          Nos Tarifs Revendeur : Achetez vos Codes IPTV en Gros
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Choisissez le forfait adapté à vos ambitions. Aucun abonnement mensuel pour le panel : vous ne payez que les crédits que vous vendez.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8 items-center">
+        <!-- Starter -->
+        <article class="glass rounded-xl p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack Starter</h3>
+          <div class="text-4xl font-bold mb-6">140 €</div>
+          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
+            <li>✓ 10 Crédits (soit 14€ / crédit)</li>
+            <li>✓ Panel de gestion Revendeur</li>
+            <li>✓ Tests 24h gratuits et illimités</li>
+            <li>✓ Support technique 7j/7</li>
+          </ul>
+          <button class="w-full glass py-3 rounded-lg font-bold transition hover:bg-white/10">Commander le Starter</button>
+        </article>
+
+        <!-- Pro -->
+        <article class="bg-carbon border border-indigo rounded-xl p-8 flex flex-col h-full relative z-10 transform scale-105 shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+            Le Plus Populaire
+          </div>
+          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack Pro</h3>
+          <div class="text-4xl font-bold mb-6">600 €</div>
+          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
+            <li>✓ 50 Crédits (soit 12€ / crédit)</li>
+            <li class="text-coral font-bold">✓ Création de sous-revendeurs</li>
+            <li>✓ Panel de gestion complet</li>
+            <li>✓ Tests 24h gratuits et illimités</li>
+          </ul>
+          <button class="w-full bg-coral hover:bg-coral/90 text-white py-3 rounded-lg font-bold transition">Devenir Pro</button>
+        </article>
+
+        <!-- VIP -->
+        <article class="glass rounded-xl p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack VIP</h3>
+          <div class="text-4xl font-bold mb-6">1000 €</div>
+          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
+            <li>✓ 100 Crédits (soit 10€ / crédit)</li>
+            <li class="text-indigo font-bold">✓ URL DNS Personnalisée</li>
+            <li>✓ Création de sous-revendeurs</li>
+            <li>✓ Panel de gestion complet</li>
+          </ul>
+          <button class="w-full glass py-3 rounded-lg font-bold transition hover:bg-white/10">Commander le VIP</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
+          Foire Aux Questions (FAQ)
+        </h2>
+      </div>
+      <div class="space-y-6">
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Qu'est-ce qu'un crédit sur le panel ?</h3>
+          <p class="text-gray-400">Un crédit correspond à un abonnement de 12 mois pour un client. Vous pouvez également générer des accès de 1, 3 ou 6 mois.</p>
+        </article>
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Les tests de 24 heures sont-ils payants ?</h3>
+          <p class="text-gray-400">Non, avec GetIPTVPanel, vous pouvez générer un nombre illimité de codes de test de 24h sans consommer vos crédits.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</Layout>
