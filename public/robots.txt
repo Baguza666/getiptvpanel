@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /mentions-legales/
 Disallow: /cgv/
-Sitemap: https://getiptvpanel.com/sitemap-index.xml
+
+Sitemap: https://getiptvpanel.com/sitemap.xml

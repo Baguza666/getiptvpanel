@@ -23,6 +23,7 @@ export default function RoiCalculator() {
       <div className="mb-6 relative z-10">
         <label className="block text-gray-400 text-sm mb-2">Choix de l'investissement</label>
         <select
+          aria-label="Sélectionnez votre pack revendeur"
           className="w-full bg-obsidian border border-white/10 rounded-lg p-3 text-white focus:border-indigo outline-none transition-colors"
           value={selectedPack.name}
           onChange={(e) => setSelectedPack(packs.find(p => p.name === e.target.value) || packs[1])}
@@ -42,6 +43,7 @@ export default function RoiCalculator() {
         </div>
         <input
           type="range"
+          aria-label="Définissez votre prix de revente"
           min="30"
           max="120"
           step="5"
@@ -66,7 +68,7 @@ export default function RoiCalculator() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-gray-400">Retour sur Investissement</span>
-          <span className="text-lg text-indigo font-bold">{roi}%</span>
+          <span className="text-lg text-indigo-400 font-bold">{roi}%</span>
         </div>
       </div>
     </div>
