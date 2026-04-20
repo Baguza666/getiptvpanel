@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quel Opérateur a Bloqué les IPTV en France ? (Solutions Anti-FAI)" description="Découvrez quels fournisseurs internet (Orange, Free, SFR) bloquent l'IPTV et comment la technologie de panel de GetIPTVPanel contourne ces restrictions.">
+  <main class="pt-32 pb-20 px-4 max-w-4xl mx-auto">
+
+    <!-- Hero -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-400 font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+        Guide Anti-Blocage
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold font-['Clash_Display'] mb-6 text-white">
+        Quel Opérateur a Bloqué les IPTV en France ?
+      </h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Comprendre les blocages FAI et découvrir comment notre technologie Anti-FAI garantit un flux stable et sans coupures pour vos clients.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-invert prose-indigo max-w-none">
+
+      <section class="glass rounded-xl p-8 mb-8">
+        <h2 class="text-2xl font-bold font-['Clash_Display'] text-white mb-4">Pourquoi les opérateurs bloquent l'IPTV pendant les matchs ?</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          En France, les fournisseurs d'accès à internet (FAI) comme <strong class="text-white">Orange, SFR, Free et Bouygues Telecom</strong> sont régulièrement contraints par les tribunaux de bloquer l'accès aux flux IPTV non officiels, principalement lors de grands événements sportifs (Ligue 1, Ligue des Champions, UFC).
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Ces blocages se font principalement via deux méthodes techniques :
+        </p>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-coral font-bold mt-1">→</span>
+            <span><strong class="text-white">Filtrage DNS :</strong> Le FAI empêche la résolution des noms de domaine des serveurs IPTV, rendant l'accès impossible via les DNS par défaut de la box.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-coral font-bold mt-1">→</span>
+            <span><strong class="text-white">Throttling (Bridage) :</strong> Le FAI réduit drastiquement la bande passante allouée aux protocoles de streaming spécifiques, causant du buffering et des coupures.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-coral font-bold mt-1">→</span>
+            <span><strong class="text-white">Blocage IP :</strong> Certains opérateurs bloquent directement les adresses IP des serveurs IPTV les plus connus.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="glass rounded-xl p-8 mb-8">
+        <h2 class="text-2xl font-bold font-['Clash_Display'] text-white mb-4">Quel fournisseur internet pour IPTV choisir ?</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          En réalité, <strong class="text-white">aucun FAI français n'est à l'abri des ordonnances de blocage</strong>. Les décisions de justice s'appliquent à tous les opérateurs majeurs. Voici un état des lieux :
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+            <h4 class="font-bold text-white mb-2">🟠 Orange</h4>
+            <p class="text-gray-400 text-sm">Applique activement le filtrage DNS et le blocage IP. Le FAI le plus strict sur les blocages IPTV.</p>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+            <h4 class="font-bold text-white mb-2">🔴 SFR</h4>
+            <p class="text-gray-400 text-sm">Utilise principalement le filtrage DNS. Des blocages fréquents pendant les événements sportifs.</p>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+            <h4 class="font-bold text-white mb-2">🟢 Free</h4>
+            <p class="text-gray-400 text-sm">Historiquement plus souple, mais se conforme désormais aux décisions judiciaires de blocage.</p>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+            <h4 class="font-bold text-white mb-2">🔵 Bouygues</h4>
+            <p class="text-gray-400 text-sm">Applique les blocages de manière similaire à SFR, avec un filtrage DNS actif.</p>
+          </div>
+        </div>
+        <p class="text-gray-300 leading-relaxed">
+          La solution n'est donc pas de changer de FAI, mais de <strong class="text-white">choisir un fournisseur IPTV dont l'infrastructure contourne nativement ces restrictions</strong>.
+        </p>
+      </section>
+
+      <section class="glass rounded-xl p-8 mb-8">
+        <h2 class="text-2xl font-bold font-['Clash_Display'] text-white mb-4">Comment notre panel sécurisé résout le problème du filtrage DNS</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          GetIPTVPanel intègre une <strong class="text-white">technologie Anti-FAI propriétaire</strong> directement au niveau de l'infrastructure serveur. Concrètement, cela signifie :
+        </p>
+        <ul class="space-y-4 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-emerald font-bold text-xl">✓</span>
+            <span><strong class="text-white">Routage dynamique :</strong> Les flux sont automatiquement reroutés via des serveurs secondaires en cas de blocage détecté, sans intervention du revendeur ou du client final.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald font-bold text-xl">✓</span>
+            <span><strong class="text-white">DNS alternatifs intégrés :</strong> Le système utilise des résolveurs DNS chiffrés (DoH/DoT) qui ne sont pas soumis au filtrage des FAI.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald font-bold text-xl">✓</span>
+            <span><strong class="text-white">Rotation d'IP automatique :</strong> Les adresses IP des serveurs de streaming sont rotatives, rendant le blocage par IP inefficace.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald font-bold text-xl">✓</span>
+            <span><strong class="text-white">Uptime 99.9% garanti :</strong> Grâce aux serveurs redondants, même en cas de pic de trafic lors des matchs, la stabilité est maintenue.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <p class="text-gray-400 mb-6">Offrez à vos clients un flux sans coupures, quel que soit leur fournisseur internet.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/#tarifs" class="bg-coral hover:bg-coral/90 text-gray-900 px-8 py-4 rounded-lg font-bold transition-colors inline-block">
+            Voir les Tarifs Revendeur
+          </a>
+          <a href="/eviter-coupures-iptv" class="glass text-white px-8 py-4 rounded-lg font-bold transition-colors hover:bg-white/10 inline-block">
+            Guide Anti-Coupures Complet
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>

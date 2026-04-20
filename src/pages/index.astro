@@ -187,14 +187,75 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- PAA FAQ Schema JSON-LD -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment démarrer une activité de revendeur IPTV ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour démarrer une activité de revendeur IPTV, choisissez un pack de crédits (Starter ou Pro) sur GetIPTVPanel. Vous recevrez des accès à un panel de gestion. Utilisez ce panel pour générer des tests de 24h gratuits et trouvez vos premiers clients via votre réseau, Telegram ou TikTok."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les meilleurs fournisseurs de panel IPTV disponibles en France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GetIPTVPanel se distingue comme le fournisseur de panel IPTV le plus fiable en France, offrant une sélection internationale massive (+20 000 chaînes), une infrastructure Anti-FAI contre les blocages opérateurs, et des marges bénéficiaires élevées pour les revendeurs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont les fonctionnalités essentielles d'un panel IPTV ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les outils essentiels pour un gestionnaire de services IPTV incluent : la création d'abonnements via API Xtream Codes, la génération d'essais gratuits avant abonnement, la gestion des sous-revendeurs, et une URL DNS personnalisée (Marque Blanche)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Légalité de la revente de services de streaming en France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'infrastructure d'un panel IPTV est légale. Toutefois, la revente de contenus protégés par des droits d'auteur sans licence est interdite. Il est de la responsabilité du revendeur de s'assurer de la conformité des flux qu'il commercialise."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Section: Questions fréquentes sur la revente IPTV -->
     <section class="py-20 px-4 max-w-4xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
-          Foire Aux Questions (FAQ)
+          Questions fréquentes sur la revente IPTV
         </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Tout ce que vous devez savoir avant de lancer votre activité de revendeur IPTV.
+        </p>
       </div>
       <div class="space-y-6">
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Comment démarrer une activité de revendeur IPTV ?</h3>
+          <p class="text-gray-400">Pour démarrer une activité de revendeur IPTV, choisissez un pack de crédits (Starter ou Pro) sur GetIPTVPanel. Vous recevrez des accès à un panel de gestion. Utilisez ce panel pour générer des tests de 24h gratuits et trouvez vos premiers clients via votre réseau, Telegram ou TikTok.</p>
+        </article>
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Quels sont les meilleurs fournisseurs de panel IPTV disponibles en France ?</h3>
+          <p class="text-gray-400">GetIPTVPanel se distingue comme le fournisseur de panel IPTV le plus fiable en France, offrant une sélection internationale massive (+20 000 chaînes), une infrastructure Anti-FAI contre les blocages opérateurs, et des marges bénéficiaires élevées pour les revendeurs.</p>
+        </article>
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Quelles sont les fonctionnalités essentielles d'un panel IPTV ?</h3>
+          <p class="text-gray-400">Les outils essentiels pour un gestionnaire de services IPTV incluent : la création d'abonnements via API Xtream Codes, la génération d'essais gratuits avant abonnement, la gestion des sous-revendeurs, et une URL DNS personnalisée (Marque Blanche).</p>
+        </article>
+        <article class="glass rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-2">Légalité de la revente de services de streaming en France ?</h3>
+          <p class="text-gray-400">L'infrastructure d'un panel IPTV est légale. Toutefois, la revente de contenus protégés par des droits d'auteur sans licence est interdite. Il est de la responsabilité du revendeur de s'assurer de la conformité des flux qu'il commercialise.</p>
+        </article>
         <article class="glass rounded-xl p-6">
           <h3 class="text-lg font-bold mb-2">Qu'est-ce qu'un crédit sur le panel ?</h3>
           <p class="text-gray-400">Un crédit correspond à un abonnement de 12 mois pour un client. Vous pouvez également générer des accès de 1, 3 ou 6 mois.</p>
