@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SeoMesh from '../components/SeoMesh.astro';
 ---
 
 <Layout 
@@ -38,5 +39,26 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-gray-500 text-sm mt-6">Ouvert 7j/7 · Réponse en moins de 15 min</p>
       </div>
     </section>
+
+    <!-- SEO Content Block -->
+    <section class="max-w-4xl mx-auto px-4 relative z-10 mt-16">
+      <div class="glass rounded-2xl p-8 md:p-10">
+        <h2 class="text-2xl font-bold font-['Clash_Display'] mb-6 text-white">Pourquoi contacter le support GetIPTVPanel ?</h2>
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Notre équipe technique est disponible 7 jours sur 7 pour vous accompagner dans chaque étape de la gestion de votre panel revendeur IPTV. Que vous ayez besoin d'aide pour la configuration initiale de votre tableau de bord, la génération de vos premiers codes d'essai 24h, ou la résolution d'un problème de connexion chez l'un de vos clients, nous sommes là pour vous guider.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Nos techniciens sont spécialisés dans l'assistance à distance pour toutes les applications populaires : <strong class="text-white">Smart IPTV</strong>, <strong class="text-white">IPTV Smarters Pro</strong>, <strong class="text-white">TiviMate Premium</strong>, <strong class="text-white">GSE Smart IPTV</strong>, et les boîtiers <strong class="text-white">MAG</strong> et <strong class="text-white">Formuler</strong>. Nous vous aidons à résoudre les erreurs d'authentification Xtream Codes, les problèmes de buffering liés aux DNS, et toute question relative à l'activation ou au renouvellement de vos crédits.
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Notre temps de réponse moyen est inférieur à 15 minutes pendant nos horaires d'ouverture (9h00 – 23h00, heure de Paris). Pour les demandes complexes nécessitant une intervention technique approfondie, nous proposons également un support par prise en main à distance via TeamViewer ou AnyDesk. N'hésitez pas à nous contacter pour toute question commerciale concernant nos <a href="/#tarifs" class="text-indigo-400 hover:underline">packs revendeur</a>, les commandes en volume ou le programme de partenariat VIP avec DNS personnalisé.
+        </p>
+      </div>
+    </section>
+
+    <!-- Internal Link Mesh -->
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      <SeoMesh />
+    </div>
   </main>
 </Layout>
