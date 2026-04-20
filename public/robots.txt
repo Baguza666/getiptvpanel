@@ -3,4 +3,13 @@ Allow: /
 Disallow: /mentions-legales/
 Disallow: /cgv/
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://getiptvpanel.com/sitemap.xml
