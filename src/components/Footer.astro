@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 ---
 <footer class="bg-[#111116] border-t border-white/10 mt-20 relative z-10">
   <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-8 text-center md:text-left">
       
       <!-- Col 1: Brand & Copyright -->
       <div class="flex flex-col justify-center md:justify-start">
@@ -26,18 +26,27 @@ const currentYear = new Date().getFullYear();
         </nav>
       </div>
 
-      <!-- Col 3: Liens Utiles -->
+      <!-- Col 3: L'Écosystème -->
       <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Liens Utiles</h4>
-        <nav class="flex flex-col gap-2 text-sm text-gray-400">
-          <a href="/contact" class="hover:text-white transition-colors">Support & Contact</a>
-          <a href="/guide-panel-revendeur" class="hover:text-white transition-colors">Guide Revendeur</a>
-          <a href="/meilleur-fournisseur-iptv" class="hover:text-white transition-colors">Notre Infrastructure</a>
-          <a href="/ressources" class="hover:text-white transition-colors">Ressources IPTV</a>
+        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">L'Écosystème</h4>
+        <nav class="flex flex-col gap-2">
+          <a href="/meilleur-fournisseur-iptv" class="text-sm text-gray-400 hover:text-white transition-colors">Notre Infrastructure</a>
+          <a href="/guide-panel-revendeur" class="text-sm text-gray-400 hover:text-white transition-colors">Guide Revendeur</a>
+          <a href="/contact" class="text-sm text-gray-400 hover:text-white transition-colors">Support & Contact</a>
         </nav>
       </div>
 
-      <!-- Col 4: Ressources Links -->
+      <!-- Col 4: Tutoriels & Apps -->
+      <div class="flex flex-col items-center md:items-start">
+        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Tutoriels & Apps</h4>
+        <nav class="flex flex-col gap-2">
+          <a href="/ressources" class="text-sm text-gray-400 hover:text-white transition-colors">Toutes les Ressources</a>
+          <a href="/configurer-iptv-smarters-pro" class="text-sm text-gray-400 hover:text-white transition-colors">Configurer Smarters Pro</a>
+          <a href="/installer-tivimate-premium" class="text-sm text-gray-400 hover:text-white transition-colors">Installer TiviMate</a>
+        </nav>
+      </div>
+
+      <!-- Col 5: Ressources Links -->
       <div class="flex flex-col items-center md:items-start">
         <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Ressources</h4>
         <nav class="flex flex-col gap-2 text-sm text-gray-400">
@@ -48,7 +57,7 @@ const currentYear = new Date().getFullYear();
         </nav>
       </div>
 
-      <!-- Col 5: Legal Links -->
+      <!-- Col 6: Legal Links -->
       <div class="flex flex-col items-center md:items-start">
         <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Légal</h4>
         <nav class="flex flex-col gap-2 text-sm text-gray-400">
