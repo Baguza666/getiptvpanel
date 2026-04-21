@@ -16,31 +16,12 @@ const {
   noindex = false
 } = Astro.props;
 
-// JSON-LD Schema structured data
+// JSON-LD Schema structured data – Organization only (FAQPage is on index.astro)
 const schema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "GetIPTVPanel",
-      "url": "https://getiptvpanel.com/"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Qu'est-ce qu'un crédit sur le panel ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Un crédit correspond à un abonnement de 12 mois pour un client." }
-        },
-        {
-          "@type": "Question",
-          "name": "Les tests de 24 heures sont-ils payants ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Non, avec GetIPTVPanel, vous pouvez générer un nombre illimité de codes de test de 24h sans consommer vos crédits." }
-        }
-      ]
-    }
-  ]
+  "@type": "Organization",
+  "name": "GetIPTVPanel",
+  "url": "https://getiptvpanel.com/"
 };
 ---
 
