@@ -42,6 +42,32 @@ const schema = {
       gtag('js', new Date());
       gtag('config', 'G-V6FRDB4ZD5');
     </script>
+    <!-- Product + AggregateRating Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Panel Revendeur IPTV Pro",
+      "description": "Infrastructure et crédits pour revendeurs IPTV. Technologie Anti-FAI, 20k chaînes et VOD.",
+      "brand": {
+        "@type": "Brand",
+        "name": "GetIPTVPanel"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "124"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "140.00",
+        "highPrice": "1000.00",
+        "priceCurrency": "EUR"
+      }
+    }
+    </script>
   </head>
   <body class="bg-obsidian text-white font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
     <Header />
