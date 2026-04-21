@@ -119,11 +119,13 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
               {/* Main Logo Image */}
               <img
                 src={`/channels/${channel.id}.webp`}
+                data-id={channel.id}
                 alt={`Logo ${channel.name}`}
                 width="80"
                 height="40"
                 loading="lazy"
-                onerror="this.style.display='none'"
+                onload="this.previousElementSibling.style.display='none';"
+                onerror="if(!this.dataset.tryPng){this.dataset.tryPng=true;this.src='/channels/'+this.dataset.id+'.png';}else if(!this.dataset.tryJpg){this.dataset.tryJpg=true;this.src='/channels/'+this.dataset.id+'.jpg';}else{this.style.display='none';}"
                 class="w-full h-full max-w-[80px] object-contain opacity-70 group-hover:opacity-100 transition-all duration-300 drop-shadow-md z-10 relative bg-transparent"
               />
             </div>
