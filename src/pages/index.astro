@@ -23,7 +23,7 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
           Discuter sur WhatsApp
         </a>
       </div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Interface du panel revendeur IPTV GetIPTVPanel avec gestion des crédits" width="1200" height="800" loading="eager" class="w-full h-auto max-w-4xl mx-auto rounded-xl shadow-2xl border border-white/10 mt-8" />
+      <img src="/panel-hero.webp" alt="Interface du panel revendeur IPTV GetIPTVPanel avec gestion des crédits" width="1200" height="800" loading="eager" class="w-full h-auto max-w-4xl mx-auto rounded-xl shadow-2xl border border-white/10 mt-8" />
     </section>
 
     <!-- ROI Calculator Section -->
@@ -66,14 +66,14 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
           <div class="w-12 h-12 bg-indigo/20 rounded-lg flex items-center justify-center mb-6 border border-indigo/30 text-2xl">🛡️</div>
           <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Technologie Anti-FAI Intégrée</h3>
           <p class="text-gray-400">Contournement automatique des blocages des fournisseurs d'accès (Orange, Free, SFR, Bouygues) lors des grands événements sportifs.</p>
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Serveurs redondants et technologie Anti-FAI pour IPTV sans coupure" width="800" height="533" loading="lazy" class="w-full h-auto rounded-lg shadow-lg object-cover mt-6" />
+
         </article>
 
         <article class="glass rounded-xl p-8 md:col-span-2">
           <div class="w-12 h-12 bg-emerald/20 rounded-lg flex items-center justify-center mb-6 border border-emerald/30 text-2xl">📺</div>
           <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Qualité 4K, UHD et FHD</h3>
           <p class="text-gray-400">Plus de 20 000 chaînes en direct avec des serveurs redondants assurant un Uptime garanti de 99.9%.</p>
-          <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80" alt="Flux IPTV compatible avec Smart TV, Android, Apple et Smarters Pro" width="800" height="533" loading="lazy" class="w-full h-auto rounded-lg shadow-lg object-cover mt-6" />
+
         </article>
 
         <article class="glass rounded-xl p-8 md:col-span-1">
@@ -93,6 +93,74 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
       <p class="text-gray-400 mt-6 leading-relaxed max-w-4xl mx-auto">
         Pour réussir, il faut <strong>choisir un fournisseur</strong> qui garantit la stabilité. En tant que <strong>fournisseur iptv fiable</strong>, nous simplifions la gestion de vos <strong>abonnements iptv</strong>. Que vos clients utilisent un <strong>appareil smart tv</strong>, une <strong>smart tv android</strong>, ou un smartphone, la compatibilité est totale. Nous vous accompagnons avec un <strong>guide complet</strong> pour votre <strong>stratégie marketing</strong>, un <strong>support client</strong> dédié, et la possibilité d'offrir des <strong>essais gratuits</strong> illimités pour convaincre vos prospects.
       </p>
+    </section>
+
+    <!-- Premium Channels & VOD Logo Grid -->
+    <section class="max-w-7xl mx-auto py-20 px-4">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white mb-6">Offrez l'accès à des milliers de <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral to-indigo-400">chaînes premium</span></h2>
+        <p class="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">Avec notre infrastructure, vos clients profitent de milliers de chaînes en direct et du plus grand catalogue VOD (Films, Séries, Sport). Tout le contenu international disponible sans coupure sur tous leurs appareils préférés.</p>
+      </div>
+
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3">
+        {
+          [
+            { name: "Netflix", icon: "netflix", color: "E50914" },
+            { name: "Prime Video", icon: "primevideo", color: "00A8E1" },
+            { name: "Disney+", icon: "disneyplus", color: "113CCF" },
+            { name: "HBO", icon: "hbo", color: "FFFFFF" },
+            { name: "Apple TV", icon: "appletv", color: "FFFFFF" },
+            { name: "Hulu", icon: "hulu", color: "1CE783" },
+            { name: "Paramount+", icon: "paramountplus", color: "0064FF" },
+            { name: "Peacock", icon: "peacock", color: "FFFFFF" },
+            { name: "Showtime", icon: "showtime", color: "FF0000" },
+            { name: "Starz", icon: "starz", color: "005B97" },
+            { name: "ESPN", icon: "espn", color: "CC0000" },
+            { name: "Sky", icon: "sky", color: "0072C9" },
+            { name: "DAZN", icon: "dazn", color: "F1F1F1" },
+            { name: "UFC", icon: "ufc", color: "D22030" },
+            { name: "Formula 1", icon: "formula1", color: "E10600" },
+            { name: "Red Bull TV", icon: "redbull", color: "DB0A40" },
+            { name: "BBC", icon: "bbc", color: "FFFFFF" },
+            { name: "CNN", icon: "cnn", color: "CC0000" },
+            { name: "Fox", icon: "fox", color: "FFFFFF" },
+            { name: "NBC", icon: "nbc", color: "FFFFFF" },
+            { name: "CBS", icon: "cbs", color: "006CE6" },
+            { name: "Discovery", icon: "discovery", color: "FFFFFF" },
+            { name: "National Geographic", icon: "nationalgeographic", color: "FFCC00" },
+            { name: "AMC", icon: "amc", color: "FFFFFF" },
+            { name: "MTV", icon: "mtv", color: "FFFFFF" },
+            { name: "Comedy Central", icon: "comedycentral", color: "FFCC00" },
+            { name: "Nickelodeon", icon: "nickelodeon", color: "FF6600" },
+            { name: "Cartoon Network", icon: "cartoonnetwork", color: "FFFFFF" },
+            { name: "Crunchyroll", icon: "crunchyroll", color: "F47521" },
+            { name: "YouTube", icon: "youtube", color: "FF0000" },
+            { name: "Twitch", icon: "twitch", color: "9146FF" },
+            { name: "Vimeo", icon: "vimeo", color: "1AB7EA" },
+            { name: "Plex", icon: "plex", color: "E5A00D" },
+            { name: "Kodi", icon: "kodi", color: "17B2E7" },
+            { name: "VLC", icon: "vlcmediaplayer", color: "FF8800" },
+            { name: "Roku", icon: "roku", color: "662D91" },
+            { name: "DirecTV", icon: "directv", color: "005EAA" },
+            { name: "Sling", icon: "sling", color: "FFA600" },
+            { name: "Tubi", icon: "tubi", color: "F52936" },
+            { name: "Pluto TV", icon: "plutotv", color: "FFFFFF" },
+            { name: "ITV", icon: "itv", color: "FFFFFF" },
+            { name: "Channel 4", icon: "channel4", color: "FFFFFF" }
+          ].map((channel) => (
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group aspect-[2/1]">
+              <img
+                src={`https://cdn.simpleicons.org/${channel.icon}/${channel.color}`}
+                alt={`Logo ${channel.name}`}
+                width="80"
+                height="40"
+                loading="lazy"
+                class="w-full h-full max-w-[80px] object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0 drop-shadow-md"
+              />
+            </div>
+          ))
+        }
+      </div>
     </section>
 
     <!-- OTT Servers Section -->
@@ -269,7 +337,7 @@ import RoiCalculator from '../components/react/RoiCalculator.tsx';
           Tout ce que vous devez savoir avant de lancer votre activité de revendeur IPTV.
         </p>
       </div>
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Support technique revendeur IPTV disponible 7j/7 sur WhatsApp" width="800" height="533" loading="lazy" class="w-full h-auto max-w-xs mx-auto rounded-full border-4 border-slate-800 shadow-xl object-cover aspect-square mb-6" />
+
       <div class="space-y-6">
         <article class="glass rounded-xl p-6">
           <h3 class="text-lg font-bold mb-2">Comment démarrer une activité de revendeur IPTV ?</h3>
