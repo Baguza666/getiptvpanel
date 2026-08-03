@@ -17,10 +17,10 @@ const formatGbp = (amount: number) => new Intl.NumberFormat('en-GB', {
 }).format(amount);
 
 const workflow = [
-  { title: '1. Compare the panel options', text: 'Review the available panels, their unit rates and the verified controls included with each option.' },
-  { title: '2. Prepare your operating details', text: 'Tell us your target market, initial order size, current reseller experience and the panel features you need.' },
-  { title: '3. Receive the complete terms', text: 'Confirm the panel name, credit rate, minimum order, account duration, support route, payment details and applicable commercial conditions in writing.' },
-  { title: '4. Test your customer workflow', text: 'Before scaling, test account creation, customer setup, renewal handling and support escalation with a small controlled process.' },
+  { title: 'Compare the panel options', text: 'Review the available panels, their unit rates and the verified controls included with each option.' },
+  { title: 'Prepare your operating details', text: 'Tell us your target market, initial order size, current reseller experience and the panel features you need.' },
+  { title: 'Receive the complete terms', text: 'Confirm the panel name, credit rate, minimum order, account duration, support route, payment details and applicable commercial conditions in writing.' },
+  { title: 'Test your customer workflow', text: 'Before scaling, test account creation, customer setup, renewal handling and support escalation with a small controlled process.' },
 ];
 
 const panelFeatures = [
@@ -132,17 +132,20 @@ const groupedRates = [...new Set(resellerPackages.map((plan) => plan.pricePerCre
 
   <section class="section section-shell" aria-labelledby="workflow-title">
     <div class="section-split">
-      <SectionHeading id="workflow-title" eyebrow="A controlled route to launch" title="How the reseller process works" intro="Follow a practical step-by-step process from initial comparison to customer onboarding." />
+      <div>
+        <SectionHeading id="workflow-title" eyebrow="A controlled route to launch" title="How the reseller process works" intro="Follow a practical step-by-step process from initial comparison to customer onboarding." />
+        <a href="/become-a-reseller/" class="button button-primary section-action">Prepare a reseller application</a>
+      </div>
       <div class="workflow-line">
-        {workflow.map((item) => (
+        {workflow.map((item, index) => (
           <article>
+            <span class="step-number">0{index + 1}</span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </article>
         ))}
       </div>
     </div>
-    <a href="/become-a-reseller/" class="button button-primary section-action">Prepare a reseller application</a>
   </section>
 
   <section class="section dark-section" aria-labelledby="calculator-preview-title">
