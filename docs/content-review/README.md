@@ -16,7 +16,7 @@ This package contains the complete extracted copy of the GetIPTVPanel UK website
 - **Total Routes Inspected**: 20
 - **Total Indexable Pages**: 17
 - **Total Priority Pages Exported**: 20 (19 rendered static pages + 1 disabled feature route)
-- **Total Captured Words**: 7274
+- **Total Captured Words**: 7270
 - **Total Claims Captured**: 24
 - **Pages Failed to Render**: 0
 - **Pages Excluded**: 0 (All defined site routes included)

@@ -262,12 +262,12 @@ Build with the numbers visibleStart with a panel rate you can model.Request pric
 
 ## Word counts
 
-- Visible main-content words: 851
+- Visible main-content words: 847
 - Navigation and footer words: 70
 - FAQ words: 163
 - Form words: 143
 - Metadata words: 29
-- Total captured words: 936
+- Total captured words: 932
 
 ## Extraction notes
 
