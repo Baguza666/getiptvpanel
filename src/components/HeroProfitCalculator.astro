@@ -1,0 +1,113 @@
+---
+import { contact, whatsAppHref } from '../config/contact';
+import { resellerPackages } from '../config/plans';
+
+const initialPlan = resellerPackages[0];
+const initialCredits = 10;
+const initialSellingPrice = 60;
+const initialRevenue = initialCredits * initialSellingPrice;
+const initialCost = initialCredits * initialPlan.pricePerCredit;
+const initialProfit = initialRevenue - initialCost;
+const initialMessage = `Hello, I am estimating ${initialPlan.name}: ${initialCredits} credits at the published £${initialPlan.pricePerCredit} rate and a £${initialSellingPrice} selling price. I would like the current reseller terms.`;
+---
+
+<form class="hero-calculator" data-hero-calculator data-whatsapp-number={contact.whatsAppNumber}>
+  <div class="hero-calculator-head">
+    <div>
+      <p class="demo-kicker">LIVE PROFIT ESTIMATE</p>
+      <h2>What could your gross profit look like?</h2>
+    </div>
+    <span class="calculator-live-badge"><span></span> Updates live</span>
+  </div>
+
+  <div class="hero-calculator-fields">
+    <div class="field hero-calculator-panel-field">
+      <label for="hero-panel">Panel</label>
+      <select id="hero-panel" name="panel" data-hero-panel>
+        {resellerPackages.map((plan) => (
+          <option value={plan.id} data-rate={plan.pricePerCredit}>{plan.name} — £{plan.pricePerCredit}/credit</option>
+        ))}
+      </select>
+    </div>
+    <div class="field">
+      <label for="hero-credits">Credits to sell</label>
+      <input id="hero-credits" name="credits" type="number" min="10" max="20" step="1" inputmode="numeric" value={initialCredits} data-hero-credits required />
+    </div>
+    <div class="field">
+      <label for="hero-selling-price">Selling price per customer (£)</label>
+      <input id="hero-selling-price" name="sellingPrice" type="number" min="0" step="1" inputmode="decimal" value={initialSellingPrice} data-hero-selling-price required />
+    </div>
+  </div>
+
+  <div class="hero-calculator-results">
+    <div class="hero-calculator-primary-result">
+      <span>Estimated gross profit</span>
+      <output for="hero-panel hero-credits hero-selling-price" data-hero-profit aria-label="Estimated gross profit" aria-live="polite" aria-atomic="true">£{initialProfit}</output>
+      <small>The panel price includes no tax or added fees. Your own business costs are excluded.</small>
+    </div>
+    <dl class="hero-calculator-secondary-results">
+      <div><dt>Revenue if all sell</dt><dd data-hero-revenue>£{initialRevenue}</dd></div>
+      <div><dt>Panel cost</dt><dd data-hero-cost>£{initialCost}</dd></div>
+    </dl>
+  </div>
+
+  <p class="hero-calculator-note">The published unit rate applies from 10 through 20 credits. Ask on WhatsApp for the current lower rate above 20.</p>
+  <div class="hero-calculator-actions">
+    <button type="submit" class="button button-primary">Discuss this estimate on WhatsApp</button>
+    <a href="/profit-calculator" class="hero-calculator-detail-link" data-event="profit_calculator_start" data-placement="hero-calculator">Add your own operating costs →</a>
+  </div>
+  <a href={whatsAppHref(initialMessage)} hidden data-hero-whatsapp-link aria-hidden="true" tabindex="-1"></a>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-hero-calculator]').forEach((calculator) => {
+    const panel = calculator.querySelector<HTMLSelectElement>('[data-hero-panel]');
+    const creditsInput = calculator.querySelector<HTMLInputElement>('[data-hero-credits]');
+    const sellingInput = calculator.querySelector<HTMLInputElement>('[data-hero-selling-price]');
+    const revenueOutput = calculator.querySelector<HTMLElement>('[data-hero-revenue]');
+    const costOutput = calculator.querySelector<HTMLElement>('[data-hero-cost]');
+    const profitOutput = calculator.querySelector<HTMLOutputElement>('[data-hero-profit]');
+    const whatsAppLink = calculator.querySelector<HTMLAnchorElement>('[data-hero-whatsapp-link]');
+    const whatsAppNumber = calculator.dataset.whatsappNumber;
+    const money = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
+
+    const update = () => {
+      const selected = panel?.selectedOptions[0];
+      const panelName = selected?.textContent?.split(' — ')[0] ?? 'a reseller panel';
+      const rate = Number(selected?.dataset.rate ?? 0);
+      const rawCredits = Number(creditsInput?.value);
+      const credits = Number.isFinite(rawCredits) && rawCredits >= 0 ? Math.floor(rawCredits) : 0;
+      const sellingPrice = Math.max(0, Number(sellingInput?.value) || 0);
+      const revenue = credits * sellingPrice;
+      const cost = credits * rate;
+      const profit = revenue - cost;
+
+      if (revenueOutput) revenueOutput.textContent = money.format(revenue);
+      if (costOutput) costOutput.textContent = money.format(cost);
+      if (profitOutput) {
+        profitOutput.textContent = money.format(profit);
+        profitOutput.dataset.negative = String(profit < 0);
+      }
+      if (whatsAppLink && whatsAppNumber) {
+        const message = `Hello, I am estimating ${panelName}: ${credits} credits at the published £${rate} rate and a ${money.format(sellingPrice)} selling price. The calculator shows ${money.format(profit)} gross profit before other costs. I would like the current reseller terms.`;
+        whatsAppLink.href = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
+      }
+    };
+
+    calculator.addEventListener('input', update);
+    calculator.addEventListener('change', () => {
+      if (creditsInput) creditsInput.value = String(Math.min(20, Math.max(10, Math.floor(Number(creditsInput.value) || 10))));
+      if (sellingInput) sellingInput.value = String(Math.max(0, Number(sellingInput.value) || 0));
+      update();
+    });
+    calculator.addEventListener('submit', (event) => {
+      event.preventDefault();
+      update();
+      if (whatsAppLink?.href) {
+        window.getIptvTrack?.('whatsapp_click', { placement: 'hero-calculator' });
+        window.location.assign(whatsAppLink.href);
+      }
+    });
+    update();
+  });
+</script>

@@ -1,0 +1,533 @@
+source_url,target_url,anchor_text,context,link_type,crawlable,status,notes
+/about,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/contact,Contact options,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/about,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/about,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/acceptable-use,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/become-a-reseller,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/become-a-reseller,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/become-a-reseller,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/profit-calculator,Estimate operating costs,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/privacy-policy,privacy policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/become-a-reseller,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/become-a-reseller,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/privacy-policy,privacy policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/contact,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/contact,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-panel,Plan reseller support workflows,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides/tivimate-setup,TiviMate setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides/iptv-smarters-setup,IPTV Smarters setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/fire-tv-setup,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/guides,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/guides,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/support,Get setup support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/tivimate-setup,TiviMate setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/tivimate-setup,Read guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/iptv-smarters-setup,IPTV Smarters setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/iptv-smarters-setup,Read guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/fire-tv-setup,Fire TV setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides/fire-tv-setup,Read guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/guides,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-panel,Explore reseller workflows,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides/tivimate-setup,TiviMate setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides/fire-tv-setup,Fire TV official-store setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/iptv-smarters-setup,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-panel,Manage multiple customer setups,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides/iptv-smarters-setup,IPTV Smarters setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides/fire-tv-setup,Fire TV official-store setup,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/guides/tivimate-setup,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/is-iptv-legal-in-the-uk,Read the UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/how-to-choose-an-iptv-service,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/,,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-panel,See how the panel works,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/profit-calculator,Add your own operating costs →,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-panel,Explore the panel walkthrough,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/profit-calculator,Open the GBP calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-packages,Review reseller rates,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-packages,View reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/individual-subscription,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/how-to-choose-an-iptv-service,Choose a service carefully,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/is-iptv-legal-in-the-uk,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/is-iptv-legal-in-the-uk,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/privacy-policy,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/privacy-policy,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/profit-calculator,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/profit-calculator,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/refund-policy,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/refund-policy,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-packages,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-packages,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/profit-calculator,Model your own costs,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/profit-calculator,Open the profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-packages,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-packages,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-panel,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-panel,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/contact,Ask a panel question,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/reseller-packages,Review published rates,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/reseller-panel,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/reseller-panel,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/support,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/support,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides,Browse setup guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides/tivimate-setup,TiviMate,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides/iptv-smarters-setup,IPTV Smarters,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/guides/fire-tv-setup,Fire TV,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/support,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/support,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/,,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-panel,Reseller Panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-packages,Packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/become-a-reseller,Start Reselling,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/guides,Resources,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/,Home,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/,UK reseller operations,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-panel,Reseller panel,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/reseller-packages,Reseller packages,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/become-a-reseller,Become a reseller,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/profit-calculator,Profit calculator,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/about,About,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/contact,Contact,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/support,Support,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/guides,Guides,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/is-iptv-legal-in-the-uk,UK legality guide,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/privacy-policy,Privacy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/terms,Terms,Rendered HTML,Internal HTML link,true,200 production-like,Self-link
+/terms,/refund-policy,Refund policy,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route
+/terms,/acceptable-use,Acceptable use,Rendered HTML,Internal HTML link,true,200 production-like,Direct canonical route

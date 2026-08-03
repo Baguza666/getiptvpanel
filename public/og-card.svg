@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">GetIPTVPanel UK reseller operations</title>
+  <desc id="desc">Deep green commercial card showing published reseller rates, minimum credit order and subscription duration.</desc>
+  <defs>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0v52" fill="none" stroke="#c8f36a" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#08130f"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(70 62)">
+    <rect width="54" height="54" rx="13" fill="#c8f36a"/>
+    <path d="M13 16h18M13 27h28M13 38h14" fill="none" stroke="#08130f" stroke-width="4" stroke-linecap="round"/>
+    <path d="m31 36 4 4 8-10" fill="none" stroke="#08130f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="72" y="34" fill="#fffdf7" font-family="Arial, sans-serif" font-size="28" font-weight="700">GetIPTVPanel</text>
+    <text x="72" y="56" fill="#8fa198" font-family="monospace" font-size="13" letter-spacing="2">UK RESELLER OPERATIONS</text>
+  </g>
+  <text x="70" y="220" fill="#c8f36a" font-family="monospace" font-size="19" font-weight="700" letter-spacing="4">PANEL RATES · OPERATING MODEL · ONBOARDING</text>
+  <text x="70" y="307" fill="#fffdf7" font-family="Arial, sans-serif" font-size="62" font-weight="700">Build with the numbers visible.</text>
+  <text x="70" y="360" fill="#afbeb6" font-family="Arial, sans-serif" font-size="27">Published GBP credit rates for a clearer reseller decision.</text>
+  <g transform="translate(70 430)">
+    <g>
+      <rect width="230" height="118" rx="14" fill="#10231b" stroke="#294038"/>
+      <text x="22" y="34" fill="#81938a" font-family="monospace" font-size="13" letter-spacing="1">STARTING RATE</text>
+      <text x="22" y="82" fill="#fffdf7" font-family="monospace" font-size="34" font-weight="700">£12</text>
+      <text x="106" y="82" fill="#9aaba2" font-family="Arial, sans-serif" font-size="16">/ credit</text>
+    </g>
+    <g transform="translate(250)">
+      <rect width="230" height="118" rx="14" fill="#10231b" stroke="#294038"/>
+      <text x="22" y="34" fill="#81938a" font-family="monospace" font-size="13" letter-spacing="1">MINIMUM ORDER</text>
+      <text x="22" y="82" fill="#fffdf7" font-family="monospace" font-size="34" font-weight="700">10</text>
+      <text x="76" y="82" fill="#9aaba2" font-family="Arial, sans-serif" font-size="16">credits</text>
+    </g>
+    <g transform="translate(500)">
+      <rect width="230" height="118" rx="14" fill="#10231b" stroke="#294038"/>
+      <text x="22" y="34" fill="#81938a" font-family="monospace" font-size="13" letter-spacing="1">CREDIT DURATION</text>
+      <text x="22" y="82" fill="#fffdf7" font-family="monospace" font-size="34" font-weight="700">12</text>
+      <text x="76" y="82" fill="#9aaba2" font-family="Arial, sans-serif" font-size="16">months</text>
+    </g>
+    <g transform="translate(750)">
+      <rect width="310" height="118" rx="14" fill="#c8f36a"/>
+      <text x="22" y="34" fill="#496607" font-family="monospace" font-size="13" letter-spacing="1">LARGER ORDERS</text>
+      <text x="22" y="78" fill="#132006" font-family="Arial, sans-serif" font-size="25" font-weight="700">Request current quote</text>
+    </g>
+  </g>
+</svg>

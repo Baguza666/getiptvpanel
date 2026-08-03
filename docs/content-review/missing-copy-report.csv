@@ -1,0 +1,4 @@
+url,missing_element,expected_source,severity,reason,notes
+"https://getiptvpanel.com/privacy-policy","Data Controller Entity Name","src/config/site.ts","P0_BLOCKER","Owner input required for legal trading entity name","Pending owner legal details"
+"https://getiptvpanel.com/terms","Registered Business Address","src/config/site.ts","P0_BLOCKER","Owner input required for legal postal address","Pending owner legal details"
+"https://getiptvpanel.com/is-iptv-legal-in-the-uk","Named Legal Reviewer","docs/claims-register.csv","P1_BLOCKER","Qualified legal sign-off required to index legal guide","Currently gated with noindex"

@@ -1,79 +1,51 @@
 ---
-import SEO from '../components/SEO.astro';
+import SEO, { type BreadcrumbItem } from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import '../styles/global.css';
+import '../config/launch';
+import { site } from '../config/site';
 
-interface Props {
-  title?: string;
-  description?: string;
-  noindex?: boolean;
+interface ArticleMeta {
+  headline: string;
+  dateModified: string;
 }
 
-const { 
-  title = "Devenir Revendeur IPTV : Le Panel N°1 pour Lancer Votre Business", 
-  description = "GetIPTVPanel: L'infrastructure la plus stable du marché francophone. Technologie Anti-FAI, +20 000 chaînes 4K, panneau de contrôle automatisé.",
-  noindex = false
-} = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  article?: ArticleMeta;
+  mobileCta?: { href: string; label: string; event?: string };
+}
 
-// JSON-LD Schema structured data – Organization only (FAQPage is on index.astro)
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GetIPTVPanel",
-  "url": "https://getiptvpanel.com/"
-};
+const { title, description, noindex = false, breadcrumbs = [], article, mobileCta } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang={site.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <SEO title={title} description={description} schema={JSON.stringify(schema)} noindex={noindex} />
-    
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6FRDB4ZD5"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V6FRDB4ZD5');
-    </script>
-    <!-- Product + AggregateRating Schema -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Panel Revendeur IPTV Pro",
-      "description": "Infrastructure et crédits pour revendeurs IPTV. Technologie Anti-FAI, 20k chaînes et VOD.",
-      "brand": {
-        "@type": "Brand",
-        "name": "GetIPTVPanel"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "124"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "140.00",
-        "highPrice": "1000.00",
-        "priceCurrency": "EUR"
-      }
-    }
-    </script>
+    <meta name="theme-color" content="#08130f" />
+    <SEO {title} {description} {noindex} {breadcrumbs} {article} />
   </head>
-  <body class="bg-obsidian text-white font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <div class="flex-grow">
+    <main id="main-content">
       <slot />
-    </div>
+    </main>
     <Footer />
+    {mobileCta && (
+      <nav class="mobile-sticky-cta" aria-label="Page action">
+        <a href={mobileCta.href} class="button button-primary" data-event={mobileCta.event ?? 'reseller_primary_cta_click'} data-placement="mobile-sticky">
+          {mobileCta.label}
+        </a>
+      </nav>
+    )}
+    <Analytics />
   </body>
 </html>

@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import ProfitCalculator from '../components/react/ProfitCalculator';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/profit-calculator'];
+const calculatorWhatsApp = whatsAppHref('Hello, I have completed a profit calculator scenario and would like to discuss package terms.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Profit calculator', path: '/profit-calculator' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: calculatorWhatsApp, label: 'Discuss estimate on WhatsApp', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="GBP reseller calculator"
+      title="Estimate IPTV Reseller Revenue, Costs and Margin"
+      intro="Build a scenario using the credit rate, selling price and operating costs you expect. The calculator shows estimated revenue, margin, break-even volume and operating contribution—it does not promise a result."
+      primaryHref="#calculator"
+      primaryLabel="Start the estimate"
+      secondaryHref="/reseller-packages/"
+      secondaryLabel="Compare credit rates"
+    />
+    <div class="hero-metrics section-shell" aria-label="Calculator rules">
+      <div class="hero-metric"><span>Currency</span><strong>GBP (£)</strong></div>
+      <div class="hero-metric"><span>Package rates</span><strong>£12 / £18 / £24</strong></div>
+      <div class="hero-metric"><span>Added panel fees</span><strong>None</strong></div>
+      <div class="hero-metric"><span>Disclaimer</span><strong>Estimate, not a promise</strong></div>
+    </div>
+  </div>
+
+  <section id="calculator" class="section-tight section-shell">
+    <ProfitCalculator client:load />
+    <div class="notice section-action" style="margin-top: 1.5rem;">
+      <strong>Disclaimer:</strong> This is an informational estimate based on the values entered. It excludes costs you do not enter and does not calculate final accounting profit, tax liability, cash flow or legal compliance. Actual outcomes depend on the lawful offer, pricing, demand, retention, refunds and operating performance.
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="read-results-title">
+    <div class="section-shell section-split">
+      <div>
+        <SectionHeading
+          id="read-results-title"
+          eyebrow="Calculation Guidance"
+          title="Read the result correctly"
+          intro="Understand what each metric represents before choosing an initial credit order size."
+        />
+      </div>
+      <div>
+        <ul class="list-check">
+          <li><strong>Gross revenue:</strong> Selling price multiplied by customer accounts sold.</li>
+          <li><strong>Gross margin:</strong> Compares revenue with direct costs entered. It is not cash in the bank.</li>
+          <li><strong>Operating contribution:</strong> Amount remaining after entered costs. It is not a guaranteed return and excludes unentered tax, labor, or chargeback expenses.</li>
+          <li><strong>Break-even volume:</strong> Number of sales required to cover entered costs in this scenario.</li>
+          <li><strong>Unsold credits:</strong> Value committed to inventory when fewer accounts are sold than credits purchased.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="scenarios-title">
+    <div class="section-split">
+      <SectionHeading
+        id="scenarios-title"
+        eyebrow="Scenario Planning"
+        title="Test more than one scenario"
+        intro="Run at least three versions before deciding on an order size:"
+      />
+      <div>
+        <ul class="list-check">
+          <li><strong>Conservative:</strong> Low demand and higher refund/support costs.</li>
+          <li><strong>Expected:</strong> Moderate demand and normal operating costs.</li>
+          <li><strong>Optimistic:</strong> Higher demand with increased support and acquisition budget.</li>
+        </ul>
+        <div class="notice" style="margin-top: 1rem;">Choose an order size that remains manageable in the conservative case.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight section-shell" aria-labelledby="calc-final-title">
+    <div class="cta-panel">
+      <p class="eyebrow">Next step</p>
+      <h2 id="calc-final-title">Discuss the completed scenario with the actual package terms</h2>
+      <div class="hero-actions centered-actions">
+        <a href={calculatorWhatsApp} class="button button-primary" data-event="whatsapp_click">Discuss this estimate</a>
+        <a href="/reseller-packages/" class="button button-secondary">Compare reseller packages</a>
+      </div>
+    </div>
+  </section>
+</Layout>

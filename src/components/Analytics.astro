@@ -1,0 +1,125 @@
+---
+import { contact } from '../config/contact';
+
+const isPreviewDeployment = Boolean(import.meta.env.VERCEL_ENV && import.meta.env.VERCEL_ENV !== 'production');
+const ga4Id = contact.analyticsEnvironment === 'production' && !isPreviewDeployment ? contact.ga4Id : undefined;
+---
+
+<script is:inline define:vars={{ ga4Id }}>
+  (() => {
+    const allowedEvents = new Set([
+      'page_view', 'reseller_primary_cta_click', 'reseller_packages_view', 'reseller_package_select',
+      'reseller_form_start', 'reseller_form_submit', 'reseller_form_error', 'panel_demo_open',
+      'profit_calculator_start', 'profit_calculator_complete', 'individual_page_view',
+      'individual_availability_click', 'individual_checkout_start', 'individual_purchase',
+      'reseller_upsell_view', 'reseller_upsell_click', 'reseller_application_from_b2c',
+      'trial_start', 'guide_cta_click', 'whatsapp_click', 'email_click', 'support_click'
+    ]);
+
+    const safeToken = (value) => {
+      const cleaned = String(value || '').trim().replace(/[^a-zA-Z0-9._~-]/g, '').slice(0, 64);
+      return cleaned || undefined;
+    };
+    const query = new URLSearchParams(window.location.search);
+    const incomingAttribution = {
+      source: safeToken(query.get('utm_source')),
+      medium: safeToken(query.get('utm_medium')),
+      campaign: safeToken(query.get('utm_campaign')),
+      landingPath: window.location.pathname,
+      referrerOrigin: (() => {
+        try { return document.referrer ? new URL(document.referrer).origin : undefined; }
+        catch { return undefined; }
+      })(),
+    };
+    if (!sessionStorage.getItem('getiptv_attribution') || incomingAttribution.source || incomingAttribution.campaign) {
+      sessionStorage.setItem('getiptv_attribution', JSON.stringify(incomingAttribution));
+    }
+    const attribution = (() => {
+      try { return JSON.parse(sessionStorage.getItem('getiptv_attribution') || '{}'); }
+      catch { return {}; }
+    })();
+
+    const routeEvents = {
+      '/reseller-packages': ['reseller_packages_view'],
+      '/individual-subscription': ['individual_page_view', 'reseller_upsell_view'],
+    };
+    const trackRouteEvents = () => {
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      (routeEvents[path] || []).forEach((eventName) => window.getIptvTrack(eventName));
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    // Google Analytics uses the function's arguments object as its command tuple.
+    // eslint-disable-next-line prefer-rest-params
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.getIptvTrack = (eventName, properties = {}) => {
+      if (!allowedEvents.has(eventName) || localStorage.getItem('analytics_consent') !== 'granted' || !ga4Id) return;
+      const candidateProperties = {
+        page_path: window.location.pathname,
+        cta_placement: properties.placement,
+        package_id: properties.packageId,
+        lead_origin: properties.origin,
+        traffic_source: attribution.source,
+        campaign: attribution.campaign,
+        device_category: window.matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop',
+        calculator_completion_state: properties.completionState,
+      };
+      const safeProperties = Object.fromEntries(Object.entries(candidateProperties).filter(([, value]) => value));
+      window.gtag('event', eventName, safeProperties);
+    };
+
+    const loadAnalytics = () => {
+      if (!ga4Id || document.querySelector('[data-ga4-loader]')) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4Id)}`;
+      script.dataset.ga4Loader = 'true';
+      document.head.append(script);
+      window.gtag('js', new Date());
+      window.gtag('config', ga4Id, { send_page_view: false, anonymize_ip: true });
+      window.getIptvTrack('page_view');
+      trackRouteEvents();
+    };
+
+    if (localStorage.getItem('analytics_consent') === 'granted') loadAnalytics();
+    window.addEventListener('getiptv:analytics-consent', loadAnalytics);
+
+    document.addEventListener('click', (event) => {
+      const target = event.target.closest('[data-event]');
+      if (!target) return;
+      if (target.dataset.origin) sessionStorage.setItem('reseller_lead_origin', target.dataset.origin);
+      const properties = {
+        placement: target.dataset.placement,
+        packageId: target.dataset.packageId,
+        origin: target.dataset.origin,
+      };
+      window.getIptvTrack(target.dataset.event, properties);
+      if (target instanceof HTMLAnchorElement && target.href.startsWith('https://wa.me/') && target.dataset.event !== 'whatsapp_click') {
+        window.getIptvTrack('whatsapp_click', properties);
+      }
+    });
+  })();
+</script>
+
+{ga4Id && (
+  <aside class="consent-banner" data-consent-banner aria-label="Analytics preferences" hidden>
+    <p><strong>Optional analytics</strong><br />Help us understand page and CTA usage. We never send form details to analytics.</p>
+    <div>
+      <button type="button" class="button button-primary" data-consent="grant">Allow analytics</button>
+      <button type="button" class="button button-secondary" data-consent="deny">Decline</button>
+    </div>
+  </aside>
+)}
+
+<script>
+  const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
+  if (banner && !localStorage.getItem('analytics_consent')) banner.hidden = false;
+  banner?.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const granted = button.dataset.consent === 'grant';
+      localStorage.setItem('analytics_consent', granted ? 'granted' : 'denied');
+      banner.hidden = true;
+      if (granted) window.dispatchEvent(new Event('getiptv:analytics-consent'));
+    });
+  });
+</script>

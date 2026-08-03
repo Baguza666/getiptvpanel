@@ -1,0 +1,40 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  primaryEvent?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  intro,
+  primaryHref,
+  primaryLabel,
+  primaryEvent = 'reseller_primary_cta_click',
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section class="page-hero section-shell">
+  <div class="hero-copy">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    <p class="hero-intro">{intro}</p>
+    {(primaryHref || secondaryHref) && (
+      <div class="hero-actions">
+        {primaryHref && primaryLabel && (
+          <a href={primaryHref} class="button button-primary" data-event={primaryEvent} data-placement="hero">{primaryLabel}</a>
+        )}
+        {secondaryHref && secondaryLabel && <a href={secondaryHref} class="button button-secondary">{secondaryLabel}</a>}
+      </div>
+    )}
+  </div>
+  <slot />
+</section>

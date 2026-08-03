@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import PanelDemo from '../components/PanelDemo.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/reseller-panel'];
+const panelWhatsApp = whatsAppHref('Hello, I would like to ask for a reseller panel walkthrough and request current package terms.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Reseller panel', path: '/reseller-panel' }];
+
+const featureMatrix = [
+  { feature: 'Create an eligible customer account', supported: true },
+  { feature: 'Renew an existing account', supported: true },
+  { feature: 'View account status and expiry', supported: true },
+  { feature: 'View available reseller credits', supported: true },
+  { feature: 'Record a customer reference', supported: true },
+  { feature: 'Review recent account actions', supported: true },
+  { feature: 'Create limited trials', supported: false, note: 'Selected panels only' },
+  { feature: 'Create sub-reseller access', supported: false, note: 'Selected panels only' },
+  { feature: 'Apply reseller branding', supported: false, note: 'Selected panels only' },
+  { feature: 'Escalate an account issue', supported: true },
+];
+
+const lifecycleSteps = [
+  { step: 'Create', text: 'Use the minimum customer information required for the account. Record a non-sensitive reference so support can identify the correct account without placing full credentials in messages.' },
+  { step: 'Verify', text: 'Confirm that the account status, duration and credit deduction match the customer order before sharing activation details.' },
+  { step: 'Support', text: 'When an issue occurs, capture the device, player version, approximate error time and account reference. Do not request a complete password in public or analytics-tracked channels.' },
+  { step: 'Renew or close', text: 'Confirm the renewal price and duration before applying another credit. Remove or close inactive records according to the panel rules and your privacy obligations.' },
+];
+
+const securityRules = [
+  'Use a unique administrator password.',
+  'Enable multi-factor authentication when the selected panel supports it.',
+  'Do not share the main administrator login.',
+  'Give sub-resellers only the permissions they need.',
+  'Remove access promptly when a staff or reseller relationship ends.',
+  'Keep customer credentials out of analytics, screenshots and public support posts.',
+];
+
+const quoteChecklist = [
+  'Exact panel name',
+  'Included controls',
+  'Unit price and minimum order',
+  'Definition and duration of one credit',
+  'Larger-order price',
+  'Credit expiry rule',
+  'Support route',
+  'Trial or sub-reseller allowance',
+  'Renewal and refund conditions',
+  'Any applicable tax or payment charge',
+];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: panelWhatsApp, label: 'Ask about the panel on WhatsApp', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Product walkthrough"
+      title="See How the IPTV Reseller Panel Works"
+      intro="Review the operating workflow before buying credits. See how eligible customer accounts, credit use, expiry dates, renewals and support information are managed—and where the panel’s responsibility ends."
+      primaryHref="/reseller-packages/"
+      primaryLabel="View available packages"
+      secondaryHref={panelWhatsApp}
+      secondaryLabel="Ask for a panel walkthrough"
+    >
+      <PanelDemo />
+    </PageHero>
+  </div>
+
+  <section class="section section-shell" aria-labelledby="scope-title">
+    <div class="section-split">
+      <div>
+        <SectionHeading
+          id="scope-title"
+          eyebrow="Scope & Boundaries"
+          title="What the panel is designed to manage"
+          intro="The panel is an account-management interface for reseller operations. Depending on the selected option, it may provide controls for creating or renewing eligible accounts, checking credit balances and keeping account status visible."
+        />
+        <p class="notice">It is not evidence of content ownership, a broadcasting licence or permission to resell third-party media.</p>
+      </div>
+      <div class="feature-stack">
+        <article class="feature-row">
+          <div>
+            <h3>Feature Matrix Summary</h3>
+            <ul class="list-check">
+              {featureMatrix.map((item) => (
+                <li>
+                  <strong>{item.feature}:</strong> {item.supported ? 'Included' : item.note || 'Not included'}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="lifecycle-title">
+    <div class="section-shell section-split">
+      <div>
+        <SectionHeading id="lifecycle-title" eyebrow="Operating Workflow" title="A clear account lifecycle" intro="Follow four clear stages to keep account management organised and customer data secure." />
+      </div>
+      <div class="workflow-line">
+        {lifecycleSteps.map((item, index) => (
+          <article>
+            <span class="step-number">0{index + 1}</span>
+            <h3>{item.step}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section" aria-labelledby="security-title">
+    <div class="section-shell section-split">
+      <div>
+        <p class="eyebrow">Access Control</p>
+        <h2 id="security-title" class="section-title">Keep access controlled</h2>
+      </div>
+      <div>
+        <ul class="list-check security-list">
+          {securityRules.map((rule) => (
+            <li>{rule}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="demo-title">
+    <SectionHeading id="demo-title" eyebrow="Interface Walkthrough" title="See the interface before committing" intro="Review screenshot demonstrations of the reseller dashboard, customer account lists, credit ledgers, and status controls." />
+    <div class="notice">
+      <strong>Demonstration interface.</strong> Exact controls vary by selected panel.
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="quote-checklist-title">
+    <div class="section-shell section-split">
+      <div>
+        <SectionHeading id="quote-checklist-title" eyebrow="Written Terms Checklist" title="What to confirm in the written quote" intro="Always review and confirm these key details in writing prior to submitting payment." />
+      </div>
+      <div>
+        <ul class="list-check">
+          {quoteChecklist.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight section-shell" aria-labelledby="panel-next-step">
+    <div class="cta-panel">
+      <p class="eyebrow">Next step</p>
+      <h2 id="panel-next-step">Compare the panel scope with the commercial terms</h2>
+      <p>Review the available credit rates, then request the full terms for the panel you intend to use.</p>
+      <div class="hero-actions centered-actions">
+        <a href="/reseller-packages/" class="button button-primary">Compare reseller packages</a>
+        <a href={panelWhatsApp} class="button button-secondary" data-event="whatsapp_click">Ask for a panel walkthrough</a>
+      </div>
+    </div>
+  </section>
+</Layout>

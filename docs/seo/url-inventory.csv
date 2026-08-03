@@ -1,0 +1,20 @@
+url,status,indexable,robots_meta,canonical,h1,title,sitemap,schema
+https://getiptvpanel.com/,200,true,"index, follow",https://getiptvpanel.com/,IPTV Reseller Panel for UK Reseller Businesses,IPTV Reseller UK | Reseller Panel & Credit Packages,true,"Organization, WebSite, BreadcrumbList"
+https://getiptvpanel.com/reseller-panel,200,true,"index, follow",https://getiptvpanel.com/reseller-panel,See How the IPTV Reseller Panel Works,IPTV Reseller Panel | Customer Credit & Renewal Management,true,BreadcrumbList
+https://getiptvpanel.com/reseller-packages,200,true,"index, follow",https://getiptvpanel.com/reseller-packages,Compare IPTV Reseller Credit Packages,IPTV Reseller Packages UK | Credit Prices & Terms,true,BreadcrumbList
+https://getiptvpanel.com/become-a-reseller,200,true,"index, follow",https://getiptvpanel.com/become-a-reseller,How to Become an IPTV Reseller with a Clear Operating Plan,How to Become an IPTV Reseller in the UK | Operating Plan,true,BreadcrumbList
+https://getiptvpanel.com/profit-calculator,200,true,"index, follow",https://getiptvpanel.com/profit-calculator,Estimate IPTV Reseller Revenue Costs and Margin,IPTV Reseller Profit Calculator | Estimate Revenue & Costs,true,BreadcrumbList
+https://getiptvpanel.com/individual-subscription,200,false,"noindex, follow",https://getiptvpanel.com/individual-subscription,Looking for One IPTV Subscription?,Individual Subscription Availability | GetIPTVPanel,false,None
+https://getiptvpanel.com/how-to-choose-an-iptv-service,200,true,"index, follow",https://getiptvpanel.com/how-to-choose-an-iptv-service,How to Choose an IPTV Service in the UK,How to Choose an IPTV Service in the UK | 8-Point Checklist,true,BreadcrumbList
+https://getiptvpanel.com/is-iptv-legal-in-the-uk,200,false,"noindex, follow",https://getiptvpanel.com/is-iptv-legal-in-the-uk,Is IPTV Legal in the UK?,Is IPTV Legal in the UK? | UK Copyright & Lawful Use,false,None
+https://getiptvpanel.com/guides,200,true,"index, follow",https://getiptvpanel.com/guides,IPTV Player Setup Guides for Supported Devices,IPTV Setup Guides | TiviMate Smarters and Fire TV,true,BreadcrumbList
+https://getiptvpanel.com/guides/tivimate-setup,200,true,"index, follow",https://getiptvpanel.com/guides/tivimate-setup,How to Set Up TiviMate on Android TV or Google TV,How to Set Up TiviMate on Android TV or Google TV,true,"BreadcrumbList, Article"
+https://getiptvpanel.com/guides/iptv-smarters-setup,200,true,"index, follow",https://getiptvpanel.com/guides/iptv-smarters-setup,How to Set Up IPTV Smarters on a Supported Device,How to Set Up IPTV Smarters on a Supported Device,true,"BreadcrumbList, Article"
+https://getiptvpanel.com/guides/fire-tv-setup,200,true,"index, follow",https://getiptvpanel.com/guides/fire-tv-setup,How to Set Up an IPTV Player on Fire TV Safely,How to Set Up an IPTV Player on Fire TV Safely,true,"BreadcrumbList, Article"
+https://getiptvpanel.com/about,200,true,"index, follow",https://getiptvpanel.com/about,A UK-First Route to Reseller-Panel Enquiries,About GetIPTVPanel | UK-First Reseller Enquiries,true,BreadcrumbList
+https://getiptvpanel.com/contact,200,true,"index, follow",https://getiptvpanel.com/contact,Get in Touch About Reseller Panels,Contact GetIPTVPanel | Reseller Enquiries,true,BreadcrumbList
+https://getiptvpanel.com/support,200,true,"index, follow",https://getiptvpanel.com/support,Give Support the Context Needed to Diagnose the Problem,GetIPTVPanel Support | Account and Setup Help,true,BreadcrumbList
+https://getiptvpanel.com/privacy-policy,200,true,"index, follow",https://getiptvpanel.com/privacy-policy,Privacy Policy,Privacy Policy | GetIPTVPanel,true,BreadcrumbList
+https://getiptvpanel.com/terms,200,true,"index, follow",https://getiptvpanel.com/terms,Terms and Conditions,Terms and Conditions | GetIPTVPanel,true,BreadcrumbList
+https://getiptvpanel.com/refund-policy,200,true,"index, follow",https://getiptvpanel.com/refund-policy,Refund Policy,Refund Policy | GetIPTVPanel,true,BreadcrumbList
+https://getiptvpanel.com/acceptable-use,200,true,"index, follow",https://getiptvpanel.com/acceptable-use,Acceptable Use Policy,Acceptable Use Policy | GetIPTVPanel,true,BreadcrumbList

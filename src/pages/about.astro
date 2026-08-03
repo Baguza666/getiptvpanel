@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/about'];
+const resellerWhatsApp = whatsAppHref('Hello, I would like to apply for reseller access.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs}>
+  <Breadcrumbs items={breadcrumbs} />
+  <PageHero eyebrow="About the website" title="A UK-First Route to Reseller-Panel Enquiries" intro="GetIPTVPanel presents published panel prices, account-management workflows, business-planning tools and a direct WhatsApp application route." primaryHref={resellerWhatsApp} primaryLabel="Apply on WhatsApp" secondaryHref="/contact" secondaryLabel="Contact options" />
+  <section class="section surface-section"><div class="section-shell">
+    <SectionHeading eyebrow="Publication standard" title="What the website publishes" />
+    <div class="card-grid card-grid-2">
+      <article class="card"><h3>Published now</h3><ul class="list-check"><li>Owner-supplied GBP base rates and credit definition</li><li>Reseller qualification and operating guidance</li><li>A labelled panel demonstration</li><li>A transparent GBP business calculator</li><li>Official-store setup routes</li></ul></article>
+      <article class="card"><h3>Clear pricing rules</h3><ul class="list-check"><li>£12, £18 or £24 per credit</li><li>10-credit minimum order</li><li>One credit activates 12 months</li><li>No tax or added panel fees</li><li>Lower quotes above 20 credits through WhatsApp</li></ul></article>
+    </div>
+  </div></section>
+  <section class="section section-shell"><div class="prose"><h2>How enquiries are handled</h2><p>The reseller form prepares a local summary from the details entered in the browser. Nothing is submitted to a GetIPTVPanel webhook or CRM. The visitor chooses whether to copy the summary, open WhatsApp and send it.</p></div></section>
+</Layout>

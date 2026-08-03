@@ -1,64 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SeoMesh from '../components/SeoMesh.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/contact'];
+const generalWhatsApp = whatsAppHref('Hello, I have a GetIPTVPanel enquiry.');
+const supportWhatsApp = whatsAppHref('Hello, I need GetIPTVPanel support. My account reference and issue are:');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }];
 ---
 
-<Layout 
-  title="Contactez GetIPTVPanel | Support Revendeur"
-  description="Contactez notre équipe de support technique et commercial."
->
-  <main class="w-full relative overflow-hidden pt-32 pb-20">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald opacity-10 blur-[130px] rounded-full pointer-events-none"></div>
-
-    <section class="max-w-4xl mx-auto px-4 relative z-10 text-center mb-16">
-      <h1 class="text-4xl md:text-6xl font-bold font-['Clash_Display'] mb-6">
-        Discutons de votre projet de revente
-      </h1>
-      <p class="text-xl text-gray-400">
-        Notre équipe d'experts est disponible pour vous accompagner, que ce soit pour une simple question technique ou pour commander votre Pack VIP.
-      </p>
-    </section>
-
-    <section class="max-w-xl mx-auto px-4 relative z-10">
-      <div class="glass p-10 md:p-14 rounded-2xl text-center shadow-2xl shadow-emerald/10 border-t border-emerald/20 transition-transform hover:scale-[1.02]">
-        <div class="w-24 h-24 bg-emerald/20 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">
-          💬
-        </div>
-        <h2 class="text-3xl font-bold font-['Clash_Display'] mb-4 text-white">Le Moyen le Plus Rapide</h2>
-        <p class="text-gray-400 mb-10 text-lg">
-          Nous répondons généralement en moins de 15 minutes sur WhatsApp durant nos horaires d'ouverture (9h00 - 23h00).
-        </p>
-        <a
-          href="https://wa.me/212782389820"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-3 bg-emerald hover:bg-emerald/90 text-white px-10 py-5 rounded-xl font-bold text-xl transition-colors shadow-lg shadow-emerald/20 w-full"
-        >
-          🟢 Lancer la discussion sur WhatsApp
-        </a>
-        <p class="text-gray-500 text-sm mt-6">Ouvert 7j/7 · Réponse en moins de 15 min</p>
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero eyebrow="Clear enquiry routes" title="Contact the Right Team with the Right Context" intro="Use the reseller form for package and panel enquiries. Use support for an existing account or setup problem. Never send passwords, payment-card details or a full credential string." />
+  </div>
+  <section class="section section-shell" aria-labelledby="contact-route-title">
+    <div class="section-split">
+      <SectionHeading id="contact-route-title" eyebrow="Direct contact" title="Choose the route that matches your question" intro="A concise, well-routed message is easier to act on than the same enquiry sent through every channel." />
+      <div class="contact-routes">
+        <article><span>01</span><div><h3>Reseller pricing</h3><p>Share expected scale, budget and experience through the qualified form.</p><a href="#reseller-enquiry">Open reseller form →</a></div></article>
+        <article><span>02</span><div><h3>General enquiry</h3><p>Start a direct WhatsApp conversation for commercial terms or another question.</p><a href={generalWhatsApp} data-event="whatsapp_click" rel="noopener noreferrer">Open WhatsApp →</a></div></article>
+        <article><span>03</span><div><h3>Account support</h3><p>Prepare your account reference, device, player version, time and exact error.</p><a href={supportWhatsApp} data-event="whatsapp_click" rel="noopener noreferrer">Message support →</a></div></article>
       </div>
-    </section>
-
-    <!-- SEO Content Block -->
-    <section class="max-w-4xl mx-auto px-4 relative z-10 mt-16">
-      <div class="glass rounded-2xl p-8 md:p-10">
-        <h2 class="text-2xl font-bold font-['Clash_Display'] mb-6 text-white">Pourquoi contacter le support GetIPTVPanel ?</h2>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Notre équipe technique est disponible 7 jours sur 7 pour vous accompagner dans chaque étape de la gestion de votre panel revendeur IPTV. Que vous ayez besoin d'aide pour la configuration initiale de votre tableau de bord, la génération de vos premiers codes d'essai 24h, ou la résolution d'un problème de connexion chez l'un de vos clients, nous sommes là pour vous guider.
-        </p>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Nos techniciens sont spécialisés dans l'assistance à distance pour toutes les applications populaires : <strong class="text-white">Smart IPTV</strong>, <strong class="text-white">IPTV Smarters Pro</strong>, <strong class="text-white">TiviMate Premium</strong>, <strong class="text-white">GSE Smart IPTV</strong>, et les boîtiers <strong class="text-white">MAG</strong> et <strong class="text-white">Formuler</strong>. Nous vous aidons à résoudre les erreurs d'authentification Xtream Codes, les problèmes de buffering liés aux DNS, et toute question relative à l'activation ou au renouvellement de vos crédits.
-        </p>
-        <p class="text-gray-400 leading-relaxed">
-          Notre temps de réponse moyen est inférieur à 15 minutes pendant nos horaires d'ouverture (9h00 – 23h00, heure de Paris). Pour les demandes complexes nécessitant une intervention technique approfondie, nous proposons également un support par prise en main à distance via TeamViewer ou AnyDesk. N'hésitez pas à nous contacter pour toute question commerciale concernant nos <a href="/#tarifs" class="text-indigo-400 hover:underline">packs revendeur</a>, les commandes en volume ou le programme de partenariat VIP avec DNS personnalisé.
-        </p>
-      </div>
-    </section>
-
-    <!-- Internal Link Mesh -->
-    <div class="max-w-4xl mx-auto px-4 relative z-10">
-      <SeoMesh />
     </div>
-  </main>
+  </section>
+  <section id="reseller-enquiry" class="section application-section">
+    <div class="section-shell application-layout">
+      <aside class="application-aside"><SectionHeading eyebrow="Reseller enquiry" title="Request panel access or package terms" intro="Include your intended market, a realistic 90-day range and the contact method you can answer." /></aside>
+      <LeadForm origin="contact-page" />
+    </div>
+  </section>
 </Layout>

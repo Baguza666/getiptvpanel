@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { pageMeta } from '../config/pages';
+import { features } from '../config/features';
+
+const meta = pageMeta['/individual-subscription'];
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Individual subscription', path: '/individual-subscription' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} noindex={!features.b2cIndividualEnabled} mobileCta={{ href: '/reseller-packages/', label: 'View reseller packages', event: 'reseller_application_from_b2c' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Individual customer information"
+      title="Looking for One IPTV Subscription?"
+      intro="GetIPTVPanel currently accepts reseller-panel enquiries. An individual UK subscription is not available for direct purchase through this website at this time."
+      primaryHref="/reseller-packages/"
+      primaryLabel="View reseller packages"
+      secondaryHref="/how-to-choose-an-iptv-service/"
+      secondaryLabel="Learn how to choose a service"
+    />
+    <div class="hero-metrics section-shell" aria-label="Status notice">
+      <div class="hero-metric"><span>Direct purchase</span><strong>Unavailable</strong></div>
+      <div class="hero-metric"><span>Primary offer</span><strong>Reseller panels</strong></div>
+      <div class="hero-metric"><span>Minimum order</span><strong>10 credits</strong></div>
+      <div class="hero-metric"><span>Status</span><strong>Feature Gated</strong></div>
+    </div>
+  </div>
+
+  <section class="section section-shell">
+    <div class="notice warning-notice">
+      <strong>Important Warning:</strong> Do not send payment to anyone claiming to sell an individual GetIPTVPanel subscription unless the offer appears on this page with verified pricing, terms and contact details.
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="requirements-title">
+    <div class="section-shell section-split">
+      <SectionHeading
+        id="requirements-title"
+        eyebrow="Launch Validator Requirements"
+        title="What will appear here before individual sales open"
+        intro="Individual subscriptions will remain unpublished until all mandatory contract fields are configured and verified."
+      />
+      <div>
+        <p>Before direct individual checkout opens, this page will explicitly document:</p>
+        <ul class="list-check">
+          <li>Exact offer name</li>
+          <li>UK territory and availability</li>
+          <li>Content or package scope</li>
+          <li>Supported devices</li>
+          <li>Price and currency</li>
+          <li>Billing frequency</li>
+          <li>Renewal and cancellation terms</li>
+          <li>Refund terms</li>
+          <li>Fulfilment method</li>
+          <li>Support route</li>
+          <li>Rights or authorisation reference</li>
+        </ul>
+        <p class="notice-subtle" style="margin-top: 1rem;">Until those details are verified, this page will not take payment or claim availability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="bridge-title">
+    <div class="section-split">
+      <SectionHeading
+        id="bridge-title"
+        eyebrow="Reseller Bridge"
+        title="Planning to manage subscriptions for customers?"
+        intro="After you understand the individual setup process, compare the reseller-panel options for managing eligible customer accounts, credits and renewals."
+      />
+      <div>
+        <a href="/reseller-packages/" class="button button-primary">Compare reseller packages</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,24 @@
+url,schema_type,implementation_source,visible_content_match,required_fields_complete,validation_status,eligible,notes
+/,Organization,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/,WebSite,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/about,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/acceptable-use,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/become-a-reseller,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/contact,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/fire-tv-setup,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/fire-tv-setup,Article,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/iptv-smarters-setup,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/iptv-smarters-setup,Article,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/tivimate-setup,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/guides/tivimate-setup,Article,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/how-to-choose-an-iptv-service,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/individual-subscription,None,Schema suppressed by noindex gate,Not applicable,Not applicable,Automated suppression test passed,false,No structured data emitted on noindex route.
+/is-iptv-legal-in-the-uk,None,Schema suppressed by noindex gate,Not applicable,Not applicable,Automated suppression test passed,false,No structured data emitted on noindex route.
+/privacy-policy,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/profit-calculator,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/refund-policy,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/reseller-packages,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/reseller-panel,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/support,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.
+/terms,BreadcrumbList,src/components/SEO.astro,true,true,JSON parsed and built-site checks passed,true,Visible-page and canonical URLs match.

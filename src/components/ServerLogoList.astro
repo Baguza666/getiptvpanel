@@ -1,0 +1,15 @@
+---
+import type { ResellerPackage } from '../config/plans';
+
+interface Props {
+  plans: ResellerPackage[];
+}
+
+const { plans } = Astro.props;
+---
+
+<ul class="server-name-list" aria-label="Panels in this rate band">
+  {plans.map((plan) => (
+    <li class="server-name-item">{plan.name}</li>
+  ))}
+</ul>

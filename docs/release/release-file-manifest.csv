@@ -1,0 +1,27 @@
+file,status,classification,included_in_release,reason,sensitive,notes
+package.json,modified,INTENDED RELEASE CHANGE,true,Updated release scripts and dependencies,false,Core dependency manifest
+package-lock.json,modified,INTENDED RELEASE CHANGE,true,Locked dependencies,false,Lockfile
+astro.config.mjs,modified,INTENDED RELEASE CHANGE,true,Configured Astro 7 static build,false,Framework config
+vercel.json,modified,INTENDED RELEASE CHANGE,true,Added Security Headers and redirect rules,false,Host config
+src/config/site.ts,modified,INTENDED RELEASE CHANGE,true,Central site metadata and navigation,false,Site identity config
+src/config/contact.ts,modified,INTENDED RELEASE CHANGE,true,Central owner WhatsApp contact number,false,Contact config
+src/config/pages.ts,modified,INTENDED RELEASE CHANGE,true,Refined metadata and titles for 19 pages,false,SEO metadata config
+src/pages/index.astro,modified,INTENDED RELEASE CHANGE,true,Refined B2B homepage template,false,Homepage route
+src/pages/reseller-panel.astro,modified,INTENDED RELEASE CHANGE,true,Refined product walkthrough page,false,Reseller panel route
+src/pages/reseller-packages.astro,modified,INTENDED RELEASE CHANGE,true,Refined package pricing page,false,Reseller packages route
+src/pages/become-a-reseller.astro,modified,INTENDED RELEASE CHANGE,true,Refined reseller start guide,false,Become reseller route
+src/pages/profit-calculator.astro,modified,INTENDED RELEASE CHANGE,true,Refined GBP calculator page,false,Calculator route
+src/pages/individual-subscription.astro,modified,INTENDED RELEASE CHANGE,true,Feature-gated noindex B2C page,false,Individual subscription route
+src/pages/how-to-choose-an-iptv-service.astro,modified,INTENDED RELEASE CHANGE,true,Refined UK buyer checklist,false,Buyer guide route
+src/pages/is-iptv-legal-in-the-uk.astro,modified,INTENDED RELEASE CHANGE,true,Gated UK legality explainer page,false,Legality route
+src/pages/guides/index.astro,modified,INTENDED RELEASE CHANGE,true,Refined setup guides hub,false,Guides hub route
+src/pages/guides/tivimate-setup.astro,modified,INTENDED RELEASE CHANGE,true,Refined TiviMate setup guide,false,TiviMate setup route
+src/pages/guides/iptv-smarters-setup.astro,modified,INTENDED RELEASE CHANGE,true,Refined IPTV Smarters setup guide,false,Smarters setup route
+src/pages/guides/fire-tv-setup.astro,modified,INTENDED RELEASE CHANGE,true,Refined Fire TV setup guide,false,Fire TV setup route
+src/components/SEO.astro,modified,INTENDED RELEASE CHANGE,true,Updated favicons to iptvfavicon.png,false,SEO component
+public/site.webmanifest,modified,INTENDED RELEASE CHANGE,true,Updated webmanifest icons to iptvfavicon.png,false,Webmanifest file
+public/iptvfavicon.png,modified,INTENDED RELEASE CHANGE,true,Site favicon,false,Favicon asset
+scripts/generate-content-review.mjs,untracked,GENERATED RELEASE ARTIFACT,true,Content review extractor script,false,Tool script
+scripts/check-built-site.mjs,untracked,GENERATED RELEASE ARTIFACT,true,Built-site compliance validator script,false,Validation script
+docs/content-review/ALL-PRIORITY-PAGE-COPY.md,untracked,GENERATED RELEASE ARTIFACT,true,Complete UK page copy extraction,false,Editorial review document
+docs/editorial/implementation-exceptions.md,untracked,GENERATED RELEASE ARTIFACT,true,Implementation exceptions documentation,false,Editorial documentation

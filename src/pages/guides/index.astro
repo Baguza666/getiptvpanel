@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { whatsAppHref } from '../../config/contact';
+import { pageMeta } from '../../config/pages';
+
+const meta = pageMeta['/guides'];
+const supportWhatsApp = whatsAppHref('Hello, I need help choosing the correct setup guide.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }];
+
+const guides = [
+  {
+    href: '/guides/tivimate-setup/',
+    title: 'TiviMate on Android TV or Google TV',
+    text: 'Install the player from Google Play, add the authorised credentials supplied by your provider and troubleshoot common login or programme-guide issues.',
+    cta: 'Open the TiviMate guide'
+  },
+  {
+    href: '/guides/iptv-smarters-setup/',
+    title: 'IPTV Smarters',
+    text: 'Check the official store listing, confirm the publisher and add the login format supplied by your authorised provider.',
+    cta: 'Open the IPTV Smarters guide'
+  },
+  {
+    href: '/guides/fire-tv-setup/',
+    title: 'Fire TV',
+    text: 'Confirm that the supported player is available in the Amazon Appstore for the device and account region. This guide does not use sideloading.',
+    cta: 'Open the Fire TV guide'
+  },
+];
+
+const preSetupRules = [
+  'Confirm that the provider supports the device.',
+  'Use only the installation route documented by the player publisher or provider.',
+  'Keep credentials out of screenshots and public messages.',
+  'Do not assume that an app-store listing verifies a separate provider’s content rights.',
+  'Contact the player publisher for application-interface issues.',
+  'Contact the authorised provider for account, package or credential issues.',
+];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: supportWhatsApp, label: 'Ask for setup help', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Supported player setup"
+      title="IPTV Player Setup Guides for Supported Devices"
+      intro="Choose your device and player. These guides use official application-store routes, explain how to add authorised provider credentials and separate player problems from provider-account problems."
+      primaryHref="#guides"
+      primaryLabel="Choose a setup guide"
+      secondaryHref={supportWhatsApp}
+      secondaryLabel="Ask for setup help"
+    />
+  </div>
+
+  <section id="guides" class="section surface-section" aria-labelledby="guides-title">
+    <div class="section-shell">
+      <SectionHeading id="guides-title" eyebrow="Setup Hub" title="Supported Player Guides" />
+      <div class="card-grid card-grid-3">
+        {guides.map((guide, index) => (
+          <article class="card number-card">
+            <div class="icon-box">{index + 1}</div>
+            <h3><a href={guide.href}>{guide.title}</a></h3>
+            <p>{guide.text}</p>
+            <a href={guide.href} class="button button-secondary section-action" data-event="guide_cta_click">{guide.cta}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="rules-title">
+    <div class="section-split">
+      <SectionHeading id="rules-title" eyebrow="Important Checklist" title="Before using any guide" intro="Review these standard setup rules before starting an installation." />
+      <ul class="list-check">
+        {preSetupRules.map((rule) => (
+          <li>{rule}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="reseller-setups-title">
+    <div class="section-shell section-split">
+      <SectionHeading
+        id="reseller-setups-title"
+        eyebrow="Reseller Operations"
+        title="Managing setups for customers?"
+        intro="A reseller needs a repeatable support workflow for devices, player versions, account references and escalation. Review the reseller-panel page before managing multiple customer setups."
+      />
+      <div>
+        <a href="/reseller-panel/" class="button button-primary">See the reseller workflow</a>
+      </div>
+    </div>
+  </section>
+</Layout>

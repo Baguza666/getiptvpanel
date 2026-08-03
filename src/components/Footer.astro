@@ -1,75 +1,67 @@
 ---
+import { whatsAppHref } from '../config/contact';
+import { site } from '../config/site';
+import Brand from './Brand.astro';
+
 const currentYear = new Date().getFullYear();
+const resellerWhatsApp = whatsAppHref('Hello, I would like the current reseller pricing and panel terms.');
+const commercial = [
+  { href: '/reseller-panel', label: 'Reseller panel' },
+  { href: '/reseller-packages', label: 'Reseller packages' },
+  { href: '/become-a-reseller', label: 'Become a reseller' },
+  { href: '/profit-calculator', label: 'Profit calculator' },
+];
+const company = [
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/support', label: 'Support' },
+  { href: '/guides', label: 'Guides' },
+  { href: '/is-iptv-legal-in-the-uk', label: 'UK legality guide' },
+];
+const legal = [
+  { href: '/privacy-policy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
+  { href: '/refund-policy', label: 'Refund policy' },
+  { href: '/acceptable-use', label: 'Acceptable use' },
+];
 ---
-<footer class="bg-[#111116] border-t border-white/10 mt-20 relative z-10">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-6 gap-8 text-center md:text-left">
-      
-      <!-- Col 1: Brand & Copyright -->
-      <div class="flex flex-col justify-center md:justify-start">
-        <a href="/" aria-label="Accueil GetIPTVPanel" class="inline-block mb-4">
-          <img src="/getiptvlogo.png" alt="GetIPTVPanel Logo" class="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" width="200" height="48" />
-        </a>
-        <p class="text-gray-400 text-sm mt-auto">
-          &copy; {currentYear} GetIPTVPanel.<br/>Tous droits réservés.
-        </p>
-      </div>
 
-      <!-- Col 2: Navigation Links -->
-      <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Navigation</h4>
-        <nav class="flex flex-col gap-2 text-sm text-gray-400">
-          <a href="/" class="hover:text-white transition-colors">Accueil</a>
-          <a href="/guide-panel-revendeur" class="hover:text-white transition-colors">Guide Revendeur</a>
-          <a href="/meilleur-fournisseur-iptv" class="hover:text-white transition-colors">Notre Infrastructure</a>
-          <a href="/contact" class="hover:text-white transition-colors">Contact</a>
-        </nav>
-      </div>
-
-      <!-- Col 3: Plan du Site -->
-      <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Plan du Site</h4>
-        <nav class="flex flex-col gap-2">
-          <a href="/contact" class="text-sm text-gray-400 hover:text-white transition-colors">Support Revendeur</a>
-          <a href="/guide-panel-revendeur" class="text-sm text-gray-400 hover:text-white transition-colors">Guide du Panel</a>
-          <a href="/legalite-revente-iptv-france" class="text-sm text-gray-400 hover:text-white transition-colors">Légalité IPTV France</a>
-          <a href="/meilleur-fournisseur-iptv" class="text-sm text-gray-400 hover:text-white transition-colors">Notre Infrastructure</a>
-          <a href="/quel-operateur-bloque-iptv" class="text-sm text-gray-400 hover:text-white transition-colors">Anti-Blocage FAI</a>
-          <a href="/ressources" class="text-sm text-gray-400 hover:text-white transition-colors">Ressources & Outils</a>
-          <a href="/revendeur-iptv-suisse" class="text-sm text-gray-400 hover:text-white transition-colors">Revendeur Suisse</a>
-        </nav>
-      </div>
-
-      <!-- Col 4: Tutoriels & Apps -->
-      <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Tutoriels & Apps</h4>
-        <nav class="flex flex-col gap-2">
-          <a href="/ressources" class="text-sm text-gray-400 hover:text-white transition-colors">Toutes les Ressources</a>
-          <a href="/configurer-iptv-smarters-pro" class="text-sm text-gray-400 hover:text-white transition-colors">Configurer Smarters Pro</a>
-          <a href="/installer-tivimate-premium" class="text-sm text-gray-400 hover:text-white transition-colors">Installer TiviMate</a>
-        </nav>
-      </div>
-
-      <!-- Col 5: Ressources Links -->
-      <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Ressources</h4>
-        <nav class="flex flex-col gap-2 text-sm text-gray-400">
-          <a href="/ressources" class="hover:text-white transition-colors text-indigo-400 font-medium">Centre de Ressources</a>
-          <a href="/comment-trouver-clients-iptv" class="hover:text-white transition-colors">Trouver des Clients</a>
-          <a href="/rentabilite-revendeur-iptv" class="hover:text-white transition-colors">Calculer sa Rentabilité</a>
-          <a href="/meilleur-panel-revendeur-iptv" class="hover:text-white transition-colors">Le Meilleur Panel 2026</a>
-        </nav>
-      </div>
-
-      <!-- Col 6: Legal Links -->
-      <div class="flex flex-col items-center md:items-start">
-        <h4 class="text-white font-bold mb-4 font-['Clash_Display'] tracking-wide">Légal</h4>
-        <nav class="flex flex-col gap-2 text-sm text-gray-400">
-          <a href="/mentions-legales" class="hover:text-white transition-colors">Mentions Légales</a>
-          <a href="/cgv" class="hover:text-white transition-colors">CGV (Conditions Générales de Vente)</a>
-        </nav>
-      </div>
-
+<footer class="site-footer">
+  <div class="footer-cta section-shell">
+    <div>
+      <p class="eyebrow">Build with the numbers visible</p>
+      <h2>Start with a panel rate you can model.</h2>
     </div>
+    <a href={resellerWhatsApp} class="button button-primary" data-event="whatsapp_click" data-placement="footer" rel="noopener noreferrer">Request pricing on WhatsApp</a>
+  </div>
+  <div class="footer-grid section-shell">
+    <section aria-label="GetIPTVPanel overview" class="footer-intro">
+      <a href="/" aria-label="GetIPTVPanel home" class="brand-link">
+        <Brand tone="light" />
+      </a>
+      <p>
+        UK-first reseller-panel enquiries and business-planning guidance. Displayed panel prices include no tax, setup fee or separate panel fee.
+      </p>
+      <div class="footer-contact">
+        <a href={whatsAppHref('Hello, I have a GetIPTVPanel enquiry.')} data-event="whatsapp_click" rel="noopener noreferrer">WhatsApp enquiry</a>
+      </div>
+    </section>
+
+    <nav aria-label="Commercial links">
+      <h2>Commercial</h2>
+      {commercial.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <nav aria-label="Company links">
+      <h2>Company</h2>
+      {company.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <nav aria-label="Legal links">
+      <h2>Legal</h2>
+      {legal.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+  <div class="footer-bottom section-shell">
+    <p>&copy; {currentYear} {site.name}. All rights reserved.</p>
+    <p>No broadcaster, platform or rights-holder affiliation is claimed.</p>
   </div>
 </footer>

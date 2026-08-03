@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import { pageMeta } from '../config/pages';
+import { site } from '../config/site';
+
+const meta = pageMeta['/is-iptv-legal-in-the-uk'];
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Is IPTV legal in the UK?', path: '/is-iptv-legal-in-the-uk' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} noindex={true} article={{ headline: meta.title, dateModified: '2026-08-03' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="General UK copyright information"
+      title="Is IPTV Legal in the UK?"
+      intro="IPTV is a method of delivering television or video over internet networks. The technology itself is not automatically unlawful. Legality depends on the content, the permissions held by the supplier, how the service is marketed and how it is used. This page provides general information and is not legal advice."
+      primaryHref="#checks"
+      primaryLabel="What a buyer should check"
+      secondaryHref="/how-to-choose-an-iptv-service/"
+      secondaryLabel="How to choose a service"
+    />
+  </div>
+
+  <section class="section surface-section">
+    <div class="section-shell content-layout">
+      <nav class="contents-nav" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#distinction">The practical distinction</a></li>
+          <li><a href="#checks">What a buyer should check</a></li>
+          <li><a href="#reseller-checks">What a reseller should check</a></li>
+          <li><a href="#risk">Higher-risk signs</a></li>
+          <li><a href="#sources">Official information</a></li>
+        </ol>
+      </nav>
+      <article class="prose">
+        <div class="meta-row">
+          <span>Official sources checked {site.updatedDate}</span>
+          <span>General information—not legal advice</span>
+        </div>
+
+        <div class="notice warning-notice">
+          <strong>Independent legal review is not recorded.</strong> This page remains noindex until a qualified legal reviewer approves the publication wording.
+        </div>
+
+        <h2 id="distinction">The practical distinction</h2>
+        <p>Lawful services have permission to supply the relevant material in the relevant territory. That permission may come from ownership, a licence or another valid legal basis.</p>
+        <p>Problems arise when copyrighted programmes, films, broadcasts or recordings are copied, communicated, supplied or resold without permission and no legal exception applies.</p>
+        <p>UK Government guidance states that using copyright material generally requires permission, a licence, ownership of the rights or an applicable exception.</p>
+
+        <h2 id="checks">What a buyer should check</h2>
+        <p>Ask the supplier to identify:</p>
+        <ul>
+          <li>Contracting business</li>
+          <li>Exact package</li>
+          <li>Territory covered</li>
+          <li>Rights owner or licensor</li>
+          <li>Permission to distribute</li>
+          <li>Permission to resell, when relevant</li>
+          <li>Duration of the permission</li>
+          <li>Supported devices</li>
+          <li>Price, renewal and refund terms</li>
+        </ul>
+        <p class="notice">A player app, playlist format, panel login or payment receipt does not by itself establish that permission exists.</p>
+
+        <h2 id="reseller-checks">What a reseller should check</h2>
+        <p>A reseller should obtain written confirmation that the upstream supplier may supply the relevant package and that resale is permitted in the intended territory.</p>
+        <p>Panel access does not create those rights. When the evidence is unclear, do not market or resell the package until qualified legal advice has been obtained.</p>
+
+        <h2 id="risk">Higher-risk signs</h2>
+        <ul>
+          <li>Protected services or broadcasts are named with no rights explanation.</li>
+          <li>One inexpensive package claims to include almost every premium service or sporting event.</li>
+          <li>Marketing focuses on avoiding enforcement, network restrictions or app-store controls.</li>
+          <li>The seller has no clear contracting identity or terms.</li>
+          <li>The reseller agreement shifts responsibility without explaining the upstream rights.</li>
+          <li>Unofficial player downloads or modified devices are required.</li>
+        </ul>
+
+        <h2 id="sources">Official information</h2>
+        <ul>
+          <li><a href="https://www.gov.uk/using-somebody-elses-intellectual-property/copyright" rel="noopener noreferrer" target="_blank">GOV.UK: Using somebody else’s intellectual property—copyright</a></li>
+          <li><a href="https://www.gov.uk/government/publications/illicit-streaming-devices" rel="noopener noreferrer" target="_blank">GOV.UK / Intellectual Property Office: Illicit streaming devices</a></li>
+          <li><a href="https://www.gov.uk/government/publications/ip-crime-and-enforcement-for-businesses/ip-crime-and-enforcement-for-businesses" rel="noopener noreferrer" target="_blank">GOV.UK / Intellectual Property Office: IP crime and enforcement for businesses</a></li>
+          <li><a href="https://www.gov.uk/guidance/enforcing-your-copyright" rel="noopener noreferrer" target="_blank">GOV.UK: Enforcing your copyright</a></li>
+        </ul>
+        <p class="notice-subtle">These sources explain general UK copyright and enforcement principles. They do not verify any GetIPTVPanel supplier, package, reseller or rights chain.</p>
+      </article>
+    </div>
+  </section>
+</Layout>

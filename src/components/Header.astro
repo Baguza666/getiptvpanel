@@ -1,56 +1,120 @@
 ---
+import { primaryNavigation } from '../config/site';
+import { whatsAppHref } from '../config/contact';
+import Brand from './Brand.astro';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const pricingLabel = 'Request Pricing';
+const pricingHref = whatsAppHref('Hello, I would like the current reseller pricing and panel terms.');
 ---
-<header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/80 border-b border-white/10 w-full">
-  <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-    <a href="/" aria-label="Accueil GetIPTVPanel" class="flex items-center">
-      <img src="/getiptvlogo.png" alt="GetIPTVPanel Logo" class="h-10 w-auto object-contain" width="200" height="40" />
+
+<header class="site-header">
+  <div class="nav-shell">
+    <a href="/" aria-label="GetIPTVPanel home" class="brand-link">
+      <Brand tone="light" compact />
     </a>
-    
-    <nav class="hidden md:flex gap-6 items-center font-medium">
-      <a href="/" class="text-gray-300 hover:text-white transition-colors">Accueil</a>
-      <a href="/guide-panel-revendeur" class="text-gray-300 hover:text-white transition-colors">Guide Revendeur</a>
-      <a href="/meilleur-fournisseur-iptv" class="text-gray-300 hover:text-white transition-colors">Notre Infrastructure</a>
-      <a href="/ressources" class="text-gray-300 hover:text-white transition-colors">Ressources</a>
-      <span class="w-px h-5 bg-white/10"></span>
-      <a href="/legalite-revente-iptv-france" class="text-gray-300 hover:text-indigo-400 transition-colors">Légalité</a>
-      <a href="/quel-operateur-bloque-iptv" class="text-gray-300 hover:text-indigo-400 transition-colors">Anti-Blocage</a>
+
+    <nav aria-label="Primary navigation" class="desktop-nav">
+      {primaryNavigation.map((item) => {
+        const isActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+        return (
+          <a href={item.href} aria-current={isActive ? 'page' : undefined} class="nav-link">
+            {item.label}
+          </a>
+        );
+      })}
     </nav>
-    
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/212782389820" target="_blank" rel="noopener noreferrer" class="bg-coral text-gray-900 px-5 md:px-6 py-2.5 rounded-lg font-bold hover:bg-coral/90 transition-colors text-sm shadow-lg shadow-coral/20">
-        Espace Revendeur
+
+    <div class="nav-actions">
+      <a
+        href={pricingHref}
+        class="button button-primary desktop-cta"
+        data-event="whatsapp_click"
+        data-placement="header"
+      >
+        {pricingLabel}
       </a>
-      
-      <!-- Hamburger Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Ouvrir le menu">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      <button
+        id="mobile-menu-button"
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path class="menu-icon-open" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path>
+          <path class="menu-icon-close" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"></path>
         </svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Drawer -->
-  <nav id="mobile-menu" class="hidden flex-col bg-[#111116] border-b border-white/10 px-4 py-2 md:hidden absolute top-full left-0 w-full shadow-2xl">
-    <a href="/" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Accueil</a>
-    <a href="/guide-panel-revendeur" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Guide Revendeur</a>
-    <a href="/meilleur-fournisseur-iptv" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Notre Infrastructure</a>
-    <a href="/ressources" class="text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5 block font-medium text-lg">Ressources</a>
-    <a href="/legalite-revente-iptv-france" class="text-gray-300 hover:text-indigo-400 transition-colors py-4 border-b border-white/5 block font-medium text-lg">Légalité IPTV</a>
-    <a href="/quel-operateur-bloque-iptv" class="text-gray-300 hover:text-indigo-400 transition-colors py-4 block font-medium text-lg">Anti-Blocage FAI</a>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
+    {primaryNavigation.map((item) => {
+      const isActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+      return <a href={item.href} aria-current={isActive ? 'page' : undefined} class="mobile-nav-link">{item.label}</a>;
+    })}
+    <a href={pricingHref} class="button button-primary" data-event="whatsapp_click" data-placement="mobile-menu" rel="noopener noreferrer">
+      {pricingLabel}
+    </a>
   </nav>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
+  const menuButton = document.querySelector<HTMLButtonElement>('#mobile-menu-button');
+  const mobileMenu = document.querySelector<HTMLElement>('#mobile-menu');
+  const main = document.querySelector<HTMLElement>('#main-content');
+  const footer = document.querySelector<HTMLElement>('.site-footer');
+  const stickyAction = document.querySelector<HTMLElement>('.mobile-sticky-cta');
+  const consentBanner = document.querySelector<HTMLElement>('.consent-banner');
+  const homeLink = document.querySelector<HTMLAnchorElement>('.nav-shell > .brand-link');
+  const desktopMedia = window.matchMedia('(min-width: 1100px)');
 
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
-      });
+  const setMenuOpen = (open: boolean) => {
+    if (!mobileMenu) return;
+    mobileMenu.hidden = !open;
+    menuButton?.setAttribute('aria-expanded', String(open));
+    menuButton?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('menu-open', open);
+    if (main) main.inert = open;
+    if (footer) footer.inert = open;
+    if (stickyAction) stickyAction.inert = open;
+    if (consentBanner) consentBanner.inert = open;
+    if (open) mobileMenu.querySelector<HTMLAnchorElement>('a')?.focus();
+  };
+
+  menuButton?.addEventListener('click', () => {
+    setMenuOpen(mobileMenu?.hidden ?? true);
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+
+  document.addEventListener('keydown', (event) => {
+    if (!mobileMenu || mobileMenu.hidden) return;
+    if (event.key === 'Escape') {
+      setMenuOpen(false);
+      menuButton?.focus();
+      return;
     }
+    if (event.key !== 'Tab' || !menuButton) return;
+    const links = [...mobileMenu.querySelectorAll<HTMLAnchorElement>('a')];
+    const focusable = [menuButton, ...links];
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  desktopMedia.addEventListener('change', (event) => {
+    if (!event.matches || mobileMenu?.hidden) return;
+    const focusWasInsideMenu = mobileMenu?.contains(document.activeElement);
+    setMenuOpen(false);
+    if (focusWasInsideMenu) homeLink?.focus();
   });
 </script>

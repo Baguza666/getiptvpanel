@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import { pageMeta } from '../../config/pages';
+import { whatsAppHref } from '../../config/contact';
+import { site } from '../../config/site';
+
+const meta = pageMeta['/guides/tivimate-setup'];
+const supportWhatsApp = whatsAppHref('Hello, I need help with a TiviMate setup question.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }, { name: 'TiviMate setup', path: '/guides/tivimate-setup' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} article={{ headline: meta.title, dateModified: '2026-08-03' }} mobileCta={{ href: supportWhatsApp, label: 'Ask for setup help', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Android TV and Google TV guide"
+      title="How to Set Up TiviMate on Android TV or Google TV"
+      intro="TiviMate is a player application. It does not supply a television package or establish that a separate provider holds distribution rights. Use the exact credentials and setup method provided by an authorised supplier."
+      primaryHref="#steps"
+      primaryLabel="Follow setup steps"
+      secondaryHref={supportWhatsApp}
+      secondaryLabel="Ask for setup help"
+    />
+  </div>
+
+  <section id="steps" class="section surface-section">
+    <div class="section-shell content-layout">
+      <nav class="contents-nav" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#before">Before you start</a></li>
+          <li><a href="#step1">Step 1: Install from Google Play</a></li>
+          <li><a href="#step2">Step 2: Add credentials</a></li>
+          <li><a href="#step3">Step 3: Check EPG & favourites</a></li>
+          <li><a href="#errors">Common errors</a></li>
+          <li><a href="#contact">Who to contact</a></li>
+        </ol>
+      </nav>
+      <article class="prose">
+        <div class="meta-row">
+          <span>Updated {site.updatedDate}</span>
+          <span>Official Google Play Route</span>
+        </div>
+
+        <h2 id="before">Before you start</h2>
+        <p>You need:</p>
+        <ul>
+          <li>Android TV or Google TV device</li>
+          <li>Access to Google Play</li>
+          <li>Current device date and time</li>
+          <li>Exact official player listing</li>
+          <li>Provider-supplied login or playlist method</li>
+          <li>Account status confirmed by the provider</li>
+        </ul>
+        <div class="notice warning-notice">Never post the complete credentials in a screenshot or support message.</div>
+
+        <h2 id="step1">Step 1: Install TiviMate from Google Play</h2>
+        <ol>
+          <li>Open Google Play on the television device.</li>
+          <li>Search for <strong>TiviMate IPTV Player</strong>.</li>
+          <li>Check that the publisher matches the current official listing.</li>
+          <li>Select <strong>Install</strong>.</li>
+          <li>Open the application after installation.</li>
+        </ol>
+        <p class="notice">Do not use an APK mirror or download code.</p>
+
+        <h2 id="step2">Step 2: Add the provider credentials</h2>
+        <ol>
+          <li>Choose the playlist or login method specified by the provider.</li>
+          <li>Enter the server address and account details exactly as supplied.</li>
+          <li>Give the account a recognisable, non-sensitive name.</li>
+          <li>Allow the initial data load to complete.</li>
+          <li>Confirm the account appears before changing other settings.</li>
+        </ol>
+
+        <h2 id="step3">Step 3: Check the programme guide and favourites</h2>
+        <ol>
+          <li>Allow the first guide update to finish.</li>
+          <li>Check the device time zone.</li>
+          <li>Open a known category.</li>
+          <li>Confirm programme times are sensible.</li>
+          <li>Add frequently used items to favourites using the player controls.</li>
+        </ol>
+
+        <h2 id="errors">Common errors</h2>
+        <h3>Login or playlist error</h3>
+        <p>Check for copied spaces, incorrect capitalisation, an incomplete server address, expired credentials or a provider-side account restriction.</p>
+
+        <h3>The programme guide is empty</h3>
+        <p>Confirm that guide data is included with the provider account. Refresh once and check the device date and time. Repeated refreshes cannot create data the provider has not supplied.</p>
+
+        <h3>Playback fails on one device</h3>
+        <p>Record the device model, operating-system version, TiviMate version, error text and approximate time. Ask the provider whether that device is supported.</p>
+
+        <h2 id="contact">Who to contact</h2>
+        <p>Contact the player publisher for installation, interface or player-account issues.</p>
+        <p>Contact the authorised provider for credentials, package availability, account status or provider-side guide data.</p>
+        <div class="notice">Provide an account reference and diagnostic context, never the complete password.</div>
+
+        <div class="card-grid card-grid-2 prose-actions" style="margin-top: 2rem;">
+          <a href={supportWhatsApp} class="button button-primary" data-event="whatsapp_click" data-origin="tivimate-guide">Ask for setup help</a>
+          <a href="/reseller-panel/" class="button button-secondary" data-event="reseller_upsell_click" data-origin="tivimate-guide">Managing multiple setups? See the reseller panel</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

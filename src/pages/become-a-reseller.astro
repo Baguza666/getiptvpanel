@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/become-a-reseller'];
+const resellerWhatsApp = whatsAppHref('Hello, I would like to submit a reseller application for review.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Become a reseller', path: '/become-a-reseller' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: resellerWhatsApp, label: 'Apply on WhatsApp', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Reseller start guide"
+      title="How to Become an IPTV Reseller with a Clear Operating Plan"
+      intro="Start with the offer, rights, numbers and support process—not a promised income figure. Use this checklist to prepare a reseller application that can be evaluated properly."
+      primaryHref="#application"
+      primaryLabel="Start the application checklist"
+      secondaryHref="/reseller-packages/"
+      secondaryLabel="Compare reseller packages"
+    />
+    <div class="hero-metrics section-shell" aria-label="Application overview">
+      <div class="hero-metric"><span>Application</span><strong>No payment required</strong></div>
+      <div class="hero-metric"><span>Minimum order</span><strong>10 credits</strong></div>
+      <div class="hero-metric"><span>Credit duration</span><strong>12 months / credit</strong></div>
+      <div class="hero-metric"><span>Response route</span><strong>WhatsApp</strong></div>
+    </div>
+  </div>
+
+  <section class="section section-shell" aria-labelledby="step1-title">
+    <div class="section-split">
+      <SectionHeading id="step1-title" eyebrow="Step 1" title="1. Define what you are permitted to sell" intro="Identify the exact package or service, the territory where it may be supplied and whether resale is permitted." />
+      <div class="notice warning-notice">
+        Panel access alone does not establish a rights chain. Ask for written evidence from the relevant supplier and obtain professional advice when the position is unclear.
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="step2-title">
+    <div class="section-shell section-split">
+      <SectionHeading id="step2-title" eyebrow="Step 2" title="2. Choose a specific customer and market" intro="Avoid trying to sell to everyone. A focused operating model is easier to explain, support and measure." />
+      <div>
+        <p>Define these core operating parameters:</p>
+        <ul class="list-check">
+          <li>Primary territory</li>
+          <li>Customer type</li>
+          <li>Supported language</li>
+          <li>Supported devices</li>
+          <li>Support hours</li>
+          <li>Payment method</li>
+          <li>Refund process</li>
+          <li>The precise lawful offer being supplied</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="step3-title">
+    <div class="section-split">
+      <SectionHeading id="step3-title" eyebrow="Step 3" title="3. Understand the credit economics" intro="The published minimum is 10 credits. One credit activates one 12-month account under the applicable panel terms." />
+      <div>
+        <p>Before buying, calculate all associated operating costs:</p>
+        <ul class="list-check">
+          <li>Credit cost</li>
+          <li>Expected retail price</li>
+          <li>Payment fees</li>
+          <li>Refund allowance</li>
+          <li>Customer-acquisition cost</li>
+          <li>Support cost</li>
+          <li>Software and administration costs</li>
+          <li>Tax obligations</li>
+          <li>Unsold-credit risk</li>
+        </ul>
+        <a href="/profit-calculator/" class="button button-secondary section-action">Use the GBP calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="step4-title">
+    <div class="section-shell section-split">
+      <SectionHeading id="step4-title" eyebrow="Step 4" title="4. Build the customer workflow" intro="Document what happens from initial enquiry through to renewal." />
+      <ul class="list-check">
+        <li>Check availability and device support</li>
+        <li>Confirm the price and terms</li>
+        <li>Take payment through an approved route</li>
+        <li>Create the eligible account</li>
+        <li>Deliver setup instructions securely</li>
+        <li>Confirm activation</li>
+        <li>Record the support reference</li>
+        <li>Send a renewal reminder</li>
+        <li>Handle cancellation and refund requests consistently</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="step5-title">
+    <div class="section-split">
+      <SectionHeading id="step5-title" eyebrow="Step 5" title="5. Prepare support before you scale" intro="Ensure your support workflow can handle customer queries before increasing account volume." />
+      <div>
+        <p>A customer needs to know who handles:</p>
+        <ul class="list-check">
+          <li>Player installation</li>
+          <li>Login or credential errors</li>
+          <li>Account status</li>
+          <li>Package availability</li>
+          <li>Device compatibility</li>
+          <li>Billing & renewals</li>
+          <li>Refunds & service incidents</li>
+        </ul>
+        <div class="notice">Do not sell more accounts than the support process can reasonably handle.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="application" class="section application-section">
+    <div class="section-shell application-layout">
+      <aside class="application-aside">
+        <SectionHeading eyebrow="Step 6" title="6. Apply with useful information" intro="Prepare your reseller application. Select your operating preferences below. The website creates a local summary for you to review before opening WhatsApp. Nothing is sent until you choose to continue." />
+        <ul class="application-points">
+          <li>Use a WhatsApp number you check regularly.</li>
+          <li>Share a realistic initial order size.</li>
+          <li>Do not include passwords, card details or service credentials.</li>
+        </ul>
+      </aside>
+      <LeadForm origin="become-a-reseller" />
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="after-apply-title">
+    <div class="section-shell section-split">
+      <SectionHeading id="after-apply-title" eyebrow="Next Steps" title="What happens after you apply" intro="Know the exact review and onboarding process." />
+      <ul class="list-check">
+        <li>The team reviews the requested panel and volume.</li>
+        <li>You receive the available panel scope and commercial terms in writing.</li>
+        <li>You confirm the unit rate, total, support route and applicable conditions.</li>
+        <li>You decide whether to proceed.</li>
+        <li>Account access is provided only through the agreed fulfilment process.</li>
+      </ul>
+    </div>
+    <div class="section-shell"><p class="notice-subtle">Do not state an activation time unless it is measured and consistently achieved.</p></div>
+  </section>
+
+  <section class="section-tight section-shell" aria-labelledby="apply-final-title">
+    <div class="cta-panel">
+      <p class="eyebrow">Application</p>
+      <h2 id="apply-final-title">Apply with the details needed for a useful answer</h2>
+      <div class="hero-actions centered-actions">
+        <a href="#application" class="button button-primary">Prepare application summary</a>
+        <a href="/reseller-packages/" class="button button-secondary">Review package rates</a>
+      </div>
+    </div>
+  </section>
+</Layout>

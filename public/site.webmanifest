@@ -1,19 +1,12 @@
 {
-  "name": "GetIPTVPanel Revendeur",
+  "name": "GetIPTVPanel",
   "short_name": "GetIPTVPanel",
+  "description": "UK-first reseller-panel enquiries and onboarding guidance.",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#05050A",
-  "theme_color": "#6366F1",
+  "background_color": "#08130f",
+  "theme_color": "#08130f",
   "icons": [
-    {
-      "src": "/favicon.svg",
-      "sizes": "192x192",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "/favicon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml"
-    }
+    { "src": "/iptvfavicon.png", "sizes": "any", "type": "image/png" }
   ]
 }

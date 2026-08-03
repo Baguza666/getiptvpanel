@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { whatsAppHref } from '../config/contact';
+
+const contactWhatsApp = whatsAppHref('Hello, I need help finding something on GetIPTVPanel.');
+---
+<Layout title="Page Not Found | GetIPTVPanel" description="The requested GetIPTVPanel page could not be found." noindex={true}>
+  <section class="page-hero section-shell"><div class="hero-copy"><p class="eyebrow">404</p><h1>That page is not available</h1><p class="hero-intro">The address may be outdated or mistyped. Use a current route below rather than guessing another URL.</p><div class="hero-actions"><a href="/" class="button button-primary">Go to the homepage</a><a href="/guides" class="button button-secondary">Browse guides</a><a href={contactWhatsApp} class="button button-secondary" data-event="whatsapp_click">Ask on WhatsApp</a></div></div></section>
+</Layout>

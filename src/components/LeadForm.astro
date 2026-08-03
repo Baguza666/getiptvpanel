@@ -1,0 +1,202 @@
+---
+import { contact } from '../config/contact';
+import { resellerPackages } from '../config/plans';
+
+interface Props {
+  id?: string;
+  origin: string;
+  compact?: boolean;
+}
+
+const { id = 'reseller-application', origin, compact = false } = Astro.props;
+---
+
+<form
+  id={id}
+  class:list={['lead-form', compact && 'lead-form-compact']}
+  data-whatsapp-form
+  data-whatsapp-number={contact.whatsAppNumber}
+  data-origin={origin}
+>
+  <div class="form-intro">
+    <p class="eyebrow">WhatsApp reseller enquiry</p>
+    <h3>Build your application message</h3>
+    <p>Your answers stay in this browser. Prepare and copy the summary, then open WhatsApp and paste it into the conversation.</p>
+    <p class="form-requirement">All fields are required.</p>
+  </div>
+
+  <fieldset class="form-group">
+    <legend><span>01</span> Contact details</legend>
+    <div class="field-grid">
+      <div class="field">
+        <label for={`${id}-name`}>Name</label>
+        <input id={`${id}-name`} name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required />
+      </div>
+      <div class="field">
+        <label for={`${id}-phone`}>WhatsApp number</label>
+        <input id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" required />
+      </div>
+      <div class="field field-full">
+        <label for={`${id}-country`}>Country</label>
+        <input id={`${id}-country`} name="country" type="text" autocomplete="country-name" value="United Kingdom" maxlength="80" required />
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <legend><span>02</span> Operating plan</legend>
+    <div class="field-grid">
+      <div class="field">
+        <label for={`${id}-panel`}>Panel of interest</label>
+        <select id={`${id}-panel`} name="panel" required>
+          <option value="">Select a panel</option>
+          {resellerPackages.map((plan) => <option value={plan.name}>{plan.name} — £{plan.pricePerCredit}/credit</option>)}
+          <option value="Not decided">Not decided</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for={`${id}-experience`}>Current experience</label>
+        <select id={`${id}-experience`} name="experience" required>
+          <option value="">Select one</option>
+          <option value="New to reselling">New to reselling</option>
+          <option value="Already selling">Already selling</option>
+          <option value="Agency or installer">Agency or installer</option>
+          <option value="Existing customer considering an upgrade">Existing customer considering an upgrade</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for={`${id}-customers`}>Expected customers in the first 90 days</label>
+        <select id={`${id}-customers`} name="customerBand" required>
+          <option value="">Select a range</option>
+          <option value="1–10">1–10</option>
+          <option value="11–25">11–25</option>
+          <option value="26–50">26–50</option>
+          <option value="51–100">51–100</option>
+          <option value="101+">101+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for={`${id}-budget`}>Initial budget band</label>
+        <select id={`${id}-budget`} name="budgetBand" required>
+          <option value="">Select a range</option>
+          <option value="Under £250">Under £250</option>
+          <option value="£250–£500">£250–£500</option>
+          <option value="£501–£1,000">£501–£1,000</option>
+          <option value="£1,001+">£1,001+</option>
+          <option value="Not decided">Not decided</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <label class="form-acknowledgement">
+      <input type="checkbox" name="routingAcknowledgement" required />
+      <span>I understand this website will prepare the details above locally. I will choose whether to copy and send them through WhatsApp. See the <a href="/privacy-policy">privacy policy</a>.</span>
+    </label>
+    <button type="submit" class="button button-primary">Prepare application summary</button>
+    <p class="form-status" role="status" aria-live="polite" data-form-status>Nothing is submitted to this website.</p>
+  </div>
+
+  <section class="message-preview" data-message-preview hidden aria-labelledby={`${id}-summary-title`}>
+    <h4 id={`${id}-summary-title`}>Application summary</h4>
+    <p>Copy this summary, open WhatsApp, paste it into the conversation and review it before pressing Send.</p>
+    <label for={`${id}-summary`}>Prepared message</label>
+    <textarea id={`${id}-summary`} rows="12" readonly data-message-summary></textarea>
+    <div class="form-actions">
+      <button type="button" class="button button-secondary" data-copy-summary>Copy summary</button>
+      <a href={`https://wa.me/${contact.whatsAppNumber}`} target="_blank" rel="noopener noreferrer" class="button button-primary" data-open-whatsapp data-event="whatsapp_click" data-origin={origin}>Open WhatsApp</a>
+    </div>
+  </section>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-whatsapp-form]').forEach((form) => {
+    let started = false;
+    let validationErrorTracked = false;
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      window.getIptvTrack?.('reseller_form_start', { origin: form.dataset.origin });
+    });
+
+    form.addEventListener('invalid', () => {
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
+      if (status) status.textContent = 'Complete every required field before continuing.';
+      if (!validationErrorTracked) {
+        validationErrorTracked = true;
+        window.getIptvTrack?.('reseller_form_error', { origin: form.dataset.origin });
+      }
+    }, true);
+
+    form.addEventListener('input', () => {
+      if (!form.checkValidity()) return;
+      validationErrorTracked = false;
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
+      if (status) status.textContent = 'Nothing is submitted to this website.';
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
+      if (!form.reportValidity()) return;
+
+      const values = Object.fromEntries(new FormData(form).entries());
+      const attribution: Record<string, string> = (() => {
+        try { return JSON.parse(sessionStorage.getItem('getiptv_attribution') || '{}'); }
+        catch { return {}; }
+      })();
+      const attributionLines = [
+        attribution.landingPath && `Landing page: ${attribution.landingPath}`,
+        attribution.source && `UTM source: ${attribution.source}`,
+        attribution.medium && `UTM medium: ${attribution.medium}`,
+        attribution.campaign && `UTM campaign: ${attribution.campaign}`,
+        attribution.referrerOrigin && `Referrer origin: ${attribution.referrerOrigin}`,
+      ].filter(Boolean);
+      const message = [
+        'Hello, I would like to apply for reseller access.',
+        '',
+        `Name: ${values.name}`,
+        `WhatsApp number: ${values.phone}`,
+        `Country: ${values.country}`,
+        `Panel: ${values.panel}`,
+        `Experience: ${values.experience}`,
+        `Expected customers in 90 days: ${values.customerBand}`,
+        `Initial budget: ${values.budgetBand}`,
+        `Enquiry source: ${form.dataset.origin ?? 'website'}`,
+        ...attributionLines,
+      ].join('\n');
+      const whatsAppNumber = form.dataset.whatsappNumber;
+      if (!whatsAppNumber) {
+        if (status) status.textContent = 'WhatsApp is temporarily unavailable.';
+        window.getIptvTrack?.('reseller_form_error', { origin: form.dataset.origin });
+        return;
+      }
+
+      const preview = form.querySelector<HTMLElement>('[data-message-preview]');
+      const summary = form.querySelector<HTMLTextAreaElement>('[data-message-summary]');
+      if (summary) summary.value = message;
+      if (preview) preview.hidden = false;
+      if (status) status.textContent = 'Summary ready. Copy it, then open WhatsApp and paste it.';
+      preview?.scrollIntoView({ block: 'nearest' });
+    });
+
+    form.querySelector<HTMLButtonElement>('[data-copy-summary]')?.addEventListener('click', async () => {
+      const summary = form.querySelector<HTMLTextAreaElement>('[data-message-summary]');
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
+      if (!summary?.value) return;
+      try {
+        await navigator.clipboard.writeText(summary.value);
+        if (status) status.textContent = 'Summary copied. Open WhatsApp, paste it and review before sending.';
+      } catch {
+        summary.focus();
+        summary.select();
+        if (status) status.textContent = 'Copy the selected summary, then open WhatsApp and paste it.';
+      }
+    });
+
+    form.querySelector<HTMLAnchorElement>('[data-open-whatsapp]')?.addEventListener('click', () => {
+      window.getIptvTrack?.('reseller_form_submit', { origin: form.dataset.origin });
+    });
+  });
+</script>

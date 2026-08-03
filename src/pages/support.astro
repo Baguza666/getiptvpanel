@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/support'];
+const supportWhatsApp = whatsAppHref('Hello, I need GetIPTVPanel support. My account reference and issue are:');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Support', path: '/support' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: supportWhatsApp, label: 'Message support on WhatsApp', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap"><PageHero eyebrow="Account and setup help" title="Give Support the Context Needed to Diagnose the Problem" intro="Start with the account reference, device, player version, time and exact error. Keep passwords, full credentials and payment-card data out of support messages." primaryHref={supportWhatsApp} primaryLabel="Message support on WhatsApp" primaryEvent="whatsapp_click" secondaryHref="/guides" secondaryLabel="Browse setup guides" /></div>
+  <section class="section surface-section"><div class="section-shell">
+    <SectionHeading eyebrow="Prepare the request" title="Five details that make a support message useful" />
+    <div class="journey-grid support-steps">
+      <article class="journey-step"><span>01</span><div><h3>Account reference</h3><p>Use the internal or order reference—not the password or complete login string.</p></div></article>
+      <article class="journey-step"><span>02</span><div><h3>Device and software</h3><p>State the device model, operating-system version, player name and player version.</p></div></article>
+      <article class="journey-step"><span>03</span><div><h3>Exact behaviour</h3><p>Copy the error wording and explain the action immediately before it appeared.</p></div></article>
+      <article class="journey-step"><span>04</span><div><h3>Time and scope</h3><p>Give an approximate UK time and state how widely the issue occurs.</p></div></article>
+      <article class="journey-step"><span>05</span><div><h3>Checks already tried</h3><p>List safe actions such as restarting the official app or checking device time.</p></div></article>
+    </div>
+  </div></section>
+  <section class="section section-shell"><SectionHeading eyebrow="Self-service" title="Use the supported setup route first" /><div class="card-grid card-grid-3"><article class="card"><h3><a href="/guides/tivimate-setup">TiviMate</a></h3><p>Official Google Play installation and account troubleshooting.</p></article><article class="card"><h3><a href="/guides/iptv-smarters-setup">IPTV Smarters</a></h3><p>Publisher verification, player/provider boundary and login errors.</p></article><article class="card"><h3><a href="/guides/fire-tv-setup">Fire TV</a></h3><p>Amazon Appstore route and the unsupported-device boundary.</p></article></div></section>
+  <section class="section dark-section"><div class="section-shell section-split"><div><p class="eyebrow">Contact support</p><h2 class="section-title">Continue through WhatsApp</h2></div><div><p class="security-note">Include your account reference, device, player version, approximate time and exact error wording so the conversation starts with useful context.</p><div class="hero-actions"><a href={supportWhatsApp} class="button button-primary" data-event="whatsapp_click">Message support on WhatsApp</a></div></div></div></section>
+</Layout>

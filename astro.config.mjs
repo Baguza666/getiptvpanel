@@ -5,7 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://getiptvpanel.com',
-  // Enable React for your ROI Calculator Island
+  trailingSlash: 'never',
+  // React is used only for the interactive profit-calculator island.
   integrations: [
     react()
   ],

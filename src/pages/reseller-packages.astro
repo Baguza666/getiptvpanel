@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import ServerLogoList from '../components/ServerLogoList.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+import { resellerPackages } from '../config/plans';
+
+const meta = pageMeta['/reseller-packages'];
+const resellerWhatsApp = whatsAppHref('Hello, I would like to request a written quote for reseller credit packages.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Reseller packages', path: '/reseller-packages' }];
+const formatGbp = (amount: number) => new Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+  maximumFractionDigits: 0,
+}).format(amount);
+
+const groupedRates = [...new Set(resellerPackages.map((plan) => plan.pricePerCredit))].map((rate) => ({
+  rate,
+  plans: resellerPackages.filter((plan) => plan.pricePerCredit === rate),
+}));
+
+const comparisonFactors = [
+  'Account-management controls',
+  'Renewal workflow',
+  'Credit visibility',
+  'Trial allowance',
+  'Sub-reseller permissions',
+  'Branding controls',
+  'Support route',
+  'Data-access controls',
+  'Credit expiry',
+  'Refund and renewal rules',
+];
+
+const quoteChecklist = [
+  'Contracting seller',
+  'Panel name',
+  'Order quantity',
+  'Unit rate',
+  'Total amount and currency',
+  'Any applicable tax or payment charge',
+  'Credit definition',
+  'Credit expiry',
+  'Included panel controls',
+  'Support route',
+  'Renewal rule',
+  'Cancellation or refund conditions',
+  'Quote expiry date',
+];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: resellerWhatsApp, label: 'Request pricing on WhatsApp', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Published reseller rates"
+      title="Compare IPTV Reseller Credit Packages"
+      intro="Start with the verified numbers. Compare the seven configured panel options by unit rate, calculate the order total and request the complete terms for your chosen panel before payment."
+      primaryHref="#rates-title"
+      primaryLabel="Compare package rates"
+      secondaryHref={resellerWhatsApp}
+      secondaryLabel="Request a written quote"
+    />
+    <div class="hero-metrics section-shell" aria-label="Pricing rules">
+      <div class="hero-metric"><span>Minimum order</span><strong>10 credits</strong></div>
+      <div class="hero-metric"><span>Credit duration</span><strong>12 months / credit</strong></div>
+      <div class="hero-metric"><span>Published rates</span><strong>£12 / £18 / £24</strong></div>
+      <div class="hero-metric"><span>At 20 credits</span><strong>Unit rate × 20</strong></div>
+    </div>
+  </div>
+
+  <section class="section surface-section" aria-labelledby="pricing-rules-title">
+    <div class="section-shell section-split">
+      <SectionHeading
+        id="pricing-rules-title"
+        eyebrow="Pricing Terms"
+        title="The published pricing rules"
+        intro="Every order follows simple, transparent arithmetic without hidden fees."
+      />
+      <ul class="list-check">
+        <li><strong>Minimum order:</strong> 10 credits</li>
+        <li><strong>Account duration:</strong> One credit activates one 12-month account</li>
+        <li><strong>Published unit rates:</strong> £12, £18 or £24 per credit</li>
+        <li><strong>Exactly 20 credits:</strong> Unit rate multiplied by 20</li>
+        <li><strong>More than 20 credits:</strong> Request the current written volume quote</li>
+        <li><strong>No added fees:</strong> No separate panel or setup fee is added to the published credit price. Any applicable tax, payment charge, renewal condition or refund rule must appear in the written quote.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="rates-title" class="section section-shell" aria-labelledby="rates-title">
+    <SectionHeading
+      id="rates-title"
+      eyebrow="Current catalogue"
+      title="Compare the seven panel options"
+      intro="The seven panels are grouped by unit price so differences are immediately visible."
+    />
+    <div class="rate-grid">
+      {groupedRates.map((group) => (
+        <article class="rate-card">
+          <p class="rate-label">Published GBP rate</p>
+          <h3 id={`rate-${group.rate}`} class="rate-value">{formatGbp(group.rate)} <span>per credit</span></h3>
+          <div class="rate-totals">
+            <div><span>10-credit minimum</span><strong>{formatGbp(group.rate * 10)}</strong></div>
+            <div><span>20-credit total</span><strong>{formatGbp(group.rate * 20)}</strong></div>
+          </div>
+          <ServerLogoList plans={group.plans} />
+          <p class="rate-card-copy">For quantities above 20 credits, request the current written volume quote. No separate panel or setup fee is added.</p>
+          <a href={whatsAppHref(`Hello, I would like to request terms for the £${group.rate}-per-credit reseller panels.`)} class="button button-primary" data-event="whatsapp_click" data-package-id={`rate-${group.rate}`}>Request terms for £{group.rate} panels</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="comparison-title">
+    <div class="section-shell section-split">
+      <SectionHeading
+        id="comparison-title"
+        eyebrow="Evaluation Guidance"
+        title="Do not compare unit price alone"
+        intro="A lower credit rate is useful only when the panel fits the way you intend to operate."
+      />
+      <div>
+        <p>Evaluate these key operating factors:</p>
+        <ul class="list-check">
+          {comparisonFactors.map((factor) => (
+            <li>{factor}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="order-table-title">
+    <SectionHeading
+      id="order-table-title"
+      eyebrow="Published price summary"
+      title="Work out the order before you request it"
+      intro="Examples based on the published rates:"
+    />
+    <div class="comparison-wrap" tabindex="0" aria-label="Reseller price summary table">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th scope="col">Credits</th>
+            <th scope="col">£12 Rate</th>
+            <th scope="col">£18 Rate</th>
+            <th scope="col">£24 Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>10 credits</strong> (Minimum)</td>
+            <td>£120</td>
+            <td>£180</td>
+            <td>£240</td>
+          </tr>
+          <tr>
+            <td><strong>20 credits</strong></td>
+            <td>£240</td>
+            <td>£360</td>
+            <td>£480</td>
+          </tr>
+          <tr>
+            <td><strong>Above 20 credits</strong></td>
+            <td colspan="3">Request current written volume quote</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notice section-action">
+      <a href="/profit-calculator/" class="button button-secondary">Model revenue and operating costs</a>
+    </div>
+  </section>
+
+  <section class="section dark-section" aria-labelledby="quote-terms-title">
+    <div class="section-shell section-split">
+      <div>
+        <p class="eyebrow">Written Quote Verification</p>
+        <h2 id="quote-terms-title" class="section-title">What the quote must include</h2>
+        <p>Your written quote should identify all commercial, panel, and support terms prior to commitment.</p>
+      </div>
+      <div>
+        <ul class="list-check security-list">
+          {quoteChecklist.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight section-shell" aria-labelledby="pricing-request-title">
+    <div class="cta-panel">
+      <p class="eyebrow">Pricing request</p>
+      <h2 id="pricing-request-title">Request terms for the panel and order size you intend to use</h2>
+      <p>Include your preferred panel, initial credit quantity, target market and any required controls.</p>
+      <div class="hero-actions centered-actions">
+        <a href="/become-a-reseller/" class="button button-primary">Prepare a reseller application</a>
+        <a href={resellerWhatsApp} class="button button-secondary" data-event="whatsapp_click">Request a written quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>

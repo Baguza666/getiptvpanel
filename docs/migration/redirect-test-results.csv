@@ -1,0 +1,18 @@
+legacy_url,target_url,http_status,status_description,verified_result
+/mentions-legales,/terms,301,Moved Permanently,PASS - Direct redirect to terms
+/politique-de-confidentialite,/privacy-policy,301,Moved Permanently,PASS - Direct redirect to privacy
+/cgv,/terms,301,Moved Permanently,PASS - Direct redirect to terms
+/conditions-generales,/terms,301,Moved Permanently,PASS - Direct redirect to terms
+/contact-us,/contact,301,Moved Permanently,PASS - Direct redirect to contact
+/meilleur-fournisseur-iptv,N/A,410,Gone,PASS - Obsolete legacy content safely removed
+/rentabilite-revendeur-iptv,N/A,410,Gone,PASS - Obsolete legacy content safely removed
+/legalite-revente-iptv-france,N/A,410,Gone,PASS - Obsolete French legal content safely removed
+/revendeur-iptv-suisse,N/A,410,Gone,PASS - Obsolete French Swiss content safely removed
+/guide-panel-revendeur,N/A,410,Gone,PASS - Obsolete French guide content safely removed
+/installer-tivimate-premium,N/A,410,Gone,PASS - Obsolete French guide content safely removed
+/configurer-iptv-smarters-pro,N/A,410,Gone,PASS - Obsolete French guide content safely removed
+/comment-trouver-clients-iptv,N/A,410,Gone,PASS - Obsolete French strategy content safely removed
+/eviter-coupures-iptv,N/A,410,Gone,PASS - Obsolete French technical content safely removed
+/quel-operateur-bloque-iptv,N/A,410,Gone,PASS - Obsolete French ISP content safely removed
+/meilleur-panel-revendeur-iptv,N/A,410,Gone,PASS - Obsolete French review content safely removed
+/ressources,N/A,410,Gone,PASS - Obsolete French resources content safely removed

@@ -1,341 +1,212 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import RoiCalculator from '../components/react/RoiCalculator.tsx';
+import PageHero from '../components/PageHero.astro';
+import HeroProfitCalculator from '../components/HeroProfitCalculator.astro';
+import ServerLogoList from '../components/ServerLogoList.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+import { resellerPackages } from '../config/plans';
+
+const meta = pageMeta['/'];
+const resellerWhatsApp = whatsAppHref('Hello, I would like to request a written quote for reseller panel credits.');
+const formatGbp = (amount: number) => new Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+  maximumFractionDigits: 0,
+}).format(amount);
+
+const workflow = [
+  { title: '1. Compare the panel options', text: 'Review the available panels, their unit rates and the verified controls included with each option.' },
+  { title: '2. Prepare your operating details', text: 'Tell us your target market, initial order size, current reseller experience and the panel features you need.' },
+  { title: '3. Receive the complete terms', text: 'Confirm the panel name, credit rate, minimum order, account duration, support route, payment details and applicable commercial conditions in writing.' },
+  { title: '4. Test your customer workflow', text: 'Before scaling, test account creation, customer setup, renewal handling and support escalation with a small controlled process.' },
+];
+
+const panelFeatures = [
+  { title: 'Customer account management', text: 'Create and renew eligible accounts, record a customer reference and check the account status from the panel.' },
+  { title: 'Credit tracking', text: 'See the credits available to your reseller account and understand the credit cost before taking a customer order.' },
+  { title: 'Expiry and renewal workflow', text: 'Keep expiry dates visible so customers can be contacted before an eligible account ends.' },
+  { title: 'Support context', text: 'Record the minimum non-sensitive information needed to investigate an account issue. Never store or send complete customer credentials in analytics or public messages.' },
+];
+
+const personas = [
+  { title: 'New resellers', text: 'Start with a clear minimum order, a written quote and a support process you can explain to customers.' },
+  { title: 'Existing resellers', text: 'Compare panel rates and workflows before moving or expanding eligible customer accounts.' },
+  { title: 'Agencies and device installers', text: 'Evaluate whether the panel fits an existing customer-service operation without mixing customer credentials into marketing or analytics systems.' },
+];
+
+const groupedRates = [...new Set(resellerPackages.map((plan) => plan.pricePerCredit))].map((rate) => ({
+  rate,
+  plans: resellerPackages.filter((plan) => plan.pricePerCredit === rate),
+}));
 ---
 
-<Layout title="Devenir Revendeur IPTV : Créer un Panel & Rentabilité">
-  <main class="w-full relative overflow-x-hidden">
-    <div class="absolute top-0 lg:top-[-10%] -left-1/4 md:left-1/2 md:-translate-x-1/2 w-[150%] md:w-[800px] h-[500px] md:h-[600px] bg-indigo opacity-20 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
+<Layout title={meta.title} description={meta.description} mobileCta={{ href: resellerWhatsApp, label: 'Request a written quote', event: 'whatsapp_click' }}>
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="UK reseller panel and onboarding"
+      title="IPTV Reseller Panel for UK Reseller Businesses"
+      intro="Manage customer activations, renewals and credit balances from one reseller panel. Compare the available panel options, review the published credit rates and request the complete commercial terms before you place an order."
+      primaryHref="/reseller-packages/"
+      primaryLabel="Compare reseller packages"
+      secondaryHref="/reseller-panel/"
+      secondaryLabel="See how the panel works"
+    >
+      <HeroProfitCalculator />
+    </PageHero>
+    <div class="hero-metrics section-shell" aria-label="Core reseller terms">
+      <div class="hero-metric"><span>Minimum order</span><strong>10 credits</strong></div>
+      <div class="hero-metric"><span>Credit duration</span><strong>12 months</strong></div>
+      <div class="hero-metric"><span>Per-credit rates</span><strong>£12 / £18 / £24</strong></div>
+      <div class="hero-metric"><span>Added panel fees</span><strong>None</strong></div>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-4 max-w-7xl mx-auto text-center">
-      <h1 class="text-5xl md:text-7xl font-bold font-['Clash_Display'] mb-6 leading-tight">
-        Devenez Revendeur IPTV : <br/> Le Panel N°1 pour Lancer Votre Business
-      </h1>
-      <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
-        Prenez le contrôle de vos revenus avec GetIPTVPanel, l'infrastructure la plus stable du marché francophone. Nous vous fournissons la technologie (Anti-FAI), le contenu (+20 000 chaînes 4K, +100 000 VOD) et un tableau de bord intuitif. Vous achetez vos crédits en gros, vous fixez vos prix de revente, et vous conservez 100% de vos bénéfices.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#tarifs" class="bg-coral hover:bg-coral/90 text-gray-900 px-8 py-4 rounded-lg font-bold transition-colors">
-          Voir les Tarifs Revendeur
-        </a>
-        <a href="https://wa.me/212782389820" class="glass text-white px-8 py-4 rounded-lg font-bold transition-colors">
-          Discuter sur WhatsApp
-        </a>
+  <section class="surface-section" aria-label="Verified site commitments">
+    <div class="trust-strip section-shell">
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"></path></svg>
+        <span>10-credit minimum</span>
       </div>
-      <img src="/panel-hero.webp" alt="Interface du panel revendeur IPTV GetIPTVPanel avec gestion des crédits" width="1200" height="800" loading="eager" class="w-full h-auto max-w-4xl mx-auto rounded-xl shadow-2xl border border-white/10 mt-8" />
-    </section>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"></path></svg>
+        <span>One credit activates one 12-month account</span>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"></path></svg>
+        <span>Written terms before payment</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- ROI Calculator Section -->
-    <section class="py-20 px-4 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+  <section class="section surface-section" aria-labelledby="panel-features-title">
+    <div class="section-shell section-split">
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-6">
-          Simulateur de Rentabilité : Combien gagne un Revendeur IPTV ?
-        </h2>
-        <p class="text-gray-400 text-lg mb-6">
-          Le business model est simple : plus vous achetez de crédits, plus votre coût unitaire baisse, et plus votre marge explose. Utilisez notre calculateur interactif pour estimer vos profits mensuels en fonction du prix de vente que vous fixez à vos clients.
-        </p>
-        <ul class="space-y-4 text-gray-400">
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">✓</span> Un crédit GetIPTVPanel = 12 mois d'abonnement.
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald">✓</span> Vous pouvez également générer des accès de 1, 3 ou 6 mois.
-          </li>
-        </ul>
+        <SectionHeading
+          id="panel-features-title"
+          eyebrow="Panel workflow"
+          title="Run the account work from one place"
+          intro="A reseller operation becomes difficult to manage when customer references, expiry dates, renewals and credit use are scattered across chats and spreadsheets. The reseller panel gives you one operating view for the account lifecycle. Use it to create or renew eligible customer accounts, monitor your available credits and keep the information needed for support organised."
+        />
+        <p class="notice-subtle">Only publish capabilities that are present in the selected panel. Panel access does not grant distribution rights for third-party content.</p>
+        <a href="/reseller-panel/" class="button button-secondary section-action" data-event="panel_demo_open">View the reseller-panel workflow</a>
       </div>
-      
-      <div class="relative z-10 w-full">
-        <RoiCalculator client:load />
+      <div class="feature-stack">
+        {panelFeatures.map((feature, index) => (
+          <article class="feature-row">
+            <span>0{index + 1}</span>
+            <div><h3>{feature.title}</h3><p>{feature.text}</p></div>
+          </article>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
-          Une Infrastructure Premium pour Fidéliser vos Clients
-        </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Pour réussir en tant que fournisseur IPTV, la qualité du flux est votre seul argument de vente. GetIPTVPanel est conçu pour éliminer les coupures et garantir une satisfaction totale.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <article class="glass rounded-xl p-8 md:col-span-2 md:row-span-2 flex flex-col justify-center">
-          <div class="w-12 h-12 bg-indigo/20 rounded-lg flex items-center justify-center mb-6 border border-indigo/30 text-2xl">🛡️</div>
-          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Technologie Anti-FAI Intégrée</h3>
-          <p class="text-gray-400">Contournement automatique des blocages des fournisseurs d'accès (Orange, Free, SFR, Bouygues) lors des grands événements sportifs.</p>
-
-        </article>
-
-        <article class="glass rounded-xl p-8 md:col-span-2">
-          <div class="w-12 h-12 bg-emerald/20 rounded-lg flex items-center justify-center mb-6 border border-emerald/30 text-2xl">📺</div>
-          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Qualité 4K, UHD et FHD</h3>
-          <p class="text-gray-400">Plus de 20 000 chaînes en direct avec des serveurs redondants assurant un Uptime garanti de 99.9%.</p>
-
-        </article>
-
-        <article class="glass rounded-xl p-8 md:col-span-1">
-          <div class="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mb-6 border border-coral/30 text-2xl">🎬</div>
-          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">VOD Quotidienne</h3>
-          <p class="text-gray-400 text-sm">Catalogue de +100 000 films et séries (Netflix, Prime, Disney+) actualisé.</p>
-        </article>
-
-        <article class="glass rounded-xl p-8 md:col-span-1">
-          <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 border border-white/20 text-2xl">📱</div>
-          <h3 class="text-2xl font-bold text-white mb-3 font-['Clash_Display']">Multi-Supports</h3>
-          <p class="text-gray-400 text-sm">Compatibles avec Smart IPTV, Smarters Pro, Apple TV, Android et m3u.</p>
-        </article>
-      </div>
-
-      <!-- LSI Semantic Entities paragraph -->
-      <p class="text-gray-400 mt-6 leading-relaxed max-w-4xl mx-auto">
-        Pour réussir, il faut <strong>choisir un fournisseur</strong> qui garantit la stabilité. En tant que <strong>fournisseur iptv fiable</strong>, nous simplifions la gestion de vos <strong>abonnements iptv</strong>. Que vos clients utilisent un <strong>appareil smart tv</strong>, une <strong>smart tv android</strong>, ou un smartphone, la compatibilité est totale. Nous vous accompagnons avec un <strong>guide complet</strong> pour votre <strong>stratégie marketing</strong>, un <strong>support client</strong> dédié, et la possibilité d'offrir des <strong>essais gratuits</strong> illimités pour convaincre vos prospects.
-      </p>
-    </section>
-
-    <!-- Premium Channels & VOD Logo Grid -->
-    <section class="max-w-7xl mx-auto py-20 px-4">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white mb-6">Offrez l'accès à des milliers de <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral to-indigo-400">chaînes premium</span></h2>
-        <p class="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">Avec notre infrastructure, vos clients profitent de milliers de chaînes en direct et du plus grand catalogue VOD (Films, Séries, Sport). Tout le contenu international disponible sans coupure sur tous leurs appareils préférés.</p>
-      </div>
-
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3">
-        {
-          [
-            { id: "f1", name: "Formula 1" }, { id: "viaplay", name: "Viaplay" }, { id: "rtl", name: "RTL" }, { id: "hbomax", name: "HBO Max" }, { id: "sbs6", name: "SBS6" }, { id: "motogp", name: "MotoGP" }, { id: "paramount", name: "Paramount Network" },
-            { id: "laune", name: "La Une" }, { id: "ufc", name: "UFC" }, { id: "rtltvi", name: "RTL TVI" }, { id: "tf1", name: "TF1" }, { id: "vtm", name: "VTM" }, { id: "france2", name: "France 2" }, { id: "play4", name: "Play4" },
-            { id: "sbs", name: "SBS" }, { id: "m6", name: "M6" }, { id: "tlc", name: "TLC" }, { id: "bfmtv", name: "BFM TV" }, { id: "nlziet", name: "NLZIET" }, { id: "disney", name: "Disney+" }, { id: "hulu", name: "Hulu" },
-            { id: "discovery", name: "Discovery" }, { id: "eurosport", name: "Eurosport" }, { id: "vrt", name: "VRT" }, { id: "espn", name: "ESPN" }, { id: "film1", name: "Film1" }, { id: "veronica", name: "Veronica" }, { id: "ziggo", name: "Ziggo Sport" },
-            { id: "discoveryplus", name: "Discovery+" }, { id: "sbs9", name: "SBS9" }, { id: "bbc", name: "BBC" }, { id: "fox", name: "FOX" }, { id: "cnn", name: "CNN" }, { id: "beinsports", name: "beIN Sports" }, { id: "tv4", name: "TV4" },
-            { id: "cmore", name: "C More" }, { id: "aftonbladet", name: "Aftonbladet" }, { id: "teliaplay", name: "Telia Play" }, { id: "eurosport2", name: "Eurosport" }, { id: "npoplus", name: "NPO Plus" }, { id: "tvl", name: "TVL" }, { id: "kanaalz", name: "Kanaal Z" }
-          ].map((channel) => (
-            <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group aspect-[2/1] relative overflow-hidden">
-              {/* Fallback Text: shows only if the image fails or isn't uploaded yet */}
-              <span class="absolute text-xs font-bold text-gray-500 opacity-60 group-hover:opacity-100 transition-opacity z-0 text-center px-1">{channel.name}</span>
-              
-              {/* Main Logo Image */}
-              <img
-                src={`/channels/${channel.id}.webp`}
-                data-id={channel.id}
-                alt={`Logo ${channel.name}`}
-                width="80"
-                height="40"
-                loading="lazy"
-                onload="this.previousElementSibling.style.display='none';"
-                onerror="if(!this.dataset.tryPng){this.dataset.tryPng=true;this.src='/channels/'+this.dataset.id+'.png';}else if(!this.dataset.tryJpg){this.dataset.tryJpg=true;this.src='/channels/'+this.dataset.id+'.jpg';}else{this.style.display='none';}"
-                class="w-full h-full max-w-[80px] object-contain opacity-70 group-hover:opacity-100 transition-all duration-300 drop-shadow-md z-10 relative bg-transparent"
-              />
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <!-- OTT Servers Section -->
-    <section class="relative py-20 px-4 max-w-7xl mx-auto text-center">
-      <!-- Ambient glow -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="w-[600px] h-[400px] rounded-full bg-indigo-500/10 blur-[100px]"></div>
-      </div>
-
-      <div class="relative z-10">
-        <!-- Brand badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-400 font-medium mb-6">
-          <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-          GetIPTVPanel
-        </div>
-
-        <!-- H2 SEO -->
-        <h2 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] mb-6">
-          Serveurs IPTV OTT Abordables –
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral to-indigo-400">Gamme Revendeur</span>
-        </h2>
-
-        <!-- Description -->
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12">
-          Vous souhaitez vendre rapidement et à petit prix ? Cette catégorie est conçue pour le volume, la simplicité et la rentabilité. Des serveurs IPTV OTT économiques, stables et ultra-faciles à vendre. Le choix parfait pour vos clients qui veulent payer moins tout en regardant plus.
-        </p>
-
-        <!-- Sub-heading -->
-        <h3 class="text-xl font-bold text-white mb-2">Serveurs disponibles (cliquez pour voir les prix)</h3>
-        <p class="text-sm text-gray-400 mb-8">Le Meilleur Programme de Revendeur IPTV pour un Business Rentable</p>
-
-        <!-- Server chips -->
-        <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Crystal" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Crystal</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Dino" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Dino</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Sansat" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Sansat</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Lion" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Lion</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Mega" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Mega</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Python" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Python</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Dream" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Dream</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Eagle" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Eagle</a>
-          <a href="#tarifs" title="Devenir revendeur Serveur IPTV Max OTT" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-indigo-500/20 hover:border-indigo-400 transition-all duration-300">Max OTT</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="tarifs" class="py-20 px-4 max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
-          Nos Tarifs Revendeur : Achetez vos Codes IPTV en Gros
-        </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Choisissez le forfait adapté à vos ambitions. Aucun abonnement mensuel pour le panel : vous ne payez que les crédits que vous vendez.
-        </p>
-      </div>
-      
-      <div class="grid lg:grid-cols-3 gap-8 items-center">
-        <!-- Starter -->
-        <article class="glass rounded-xl p-8 flex flex-col h-full">
-          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack Starter</h3>
-          <div class="text-4xl font-bold mb-6">140 €</div>
-          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
-            <li>✓ 10 Crédits (soit 14€ / crédit)</li>
-            <li>✓ Panel de gestion Revendeur</li>
-            <li>✓ Tests 24h gratuits et illimités</li>
-            <li>✓ Support technique 7j/7</li>
-          </ul>
-          <a href="https://wa.me/212782389820?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Starter%20%28140%E2%82%AC%29%20pour%20devenir%20revendeur." target="_blank" rel="noopener noreferrer" class="w-full glass py-3 rounded-lg font-bold transition hover:bg-white/10 block text-center">Commander le Starter</a>
-        </article>
-
-        <!-- Pro -->
-        <article class="bg-carbon border border-indigo rounded-xl p-8 flex flex-col h-full relative z-10 transform scale-105 shadow-[0_0_30px_rgba(99,102,241,0.2)]">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-            Le Plus Populaire
+  <section class="section section-shell" aria-labelledby="package-preview-title">
+    <SectionHeading
+      id="package-preview-title"
+      eyebrow="Reseller packages"
+      title="Compare the published credit rates"
+      intro="There are seven configured panel options across the published rates of £12, £18 and £24 per credit. Every order starts at a minimum of 10 credits. One credit activates one 12-month account under the applicable panel terms. For an order of exactly 20 credits, the total is the unit rate multiplied by 20. Larger orders may receive a different written quote. No separate panel or setup fee is added to the published credit price. Any applicable tax, payment cost, renewal condition or refund rule must be confirmed in the written quote before payment."
+    />
+    <div class="rate-grid">
+      {groupedRates.map((group) => (
+        <article class="rate-card">
+          <p class="rate-label">Published GBP rate</p>
+          <p class="rate-value">£{group.rate} <span>per credit</span></p>
+          <div class="rate-totals">
+            <div><span>10-credit minimum</span><strong>{formatGbp(group.rate * 10)}</strong></div>
+            <div><span>20 credits</span><strong>{formatGbp(group.rate * 20)}</strong></div>
           </div>
-          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack Pro</h3>
-          <div class="text-4xl font-bold mb-6">600 €</div>
-          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
-            <li>✓ 50 Crédits (soit 12€ / crédit)</li>
-            <li class="text-coral font-bold">✓ Création de sous-revendeurs</li>
-            <li>✓ Panel de gestion complet</li>
-            <li>✓ Tests 24h gratuits et illimités</li>
-          </ul>
-          <a href="https://wa.me/212782389820?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Pro%20%28600%E2%82%AC%29%20pour%20devenir%20revendeur." target="_blank" rel="noopener noreferrer" class="w-full bg-coral hover:bg-coral/90 text-white py-3 rounded-lg font-bold transition block text-center">Devenir Pro</a>
+          <ServerLogoList plans={group.plans} />
+          <p class="rate-card-copy">For orders above 20 credits, contact us for the current lower written volume quote.</p>
+          <a href={whatsAppHref(`Hello, I would like to request the written terms for £${group.rate}-per-credit reseller panels.`)} class="button button-primary" data-event="whatsapp_click" data-placement="homepage-packages">Ask about £{group.rate} panels</a>
         </article>
+      ))}
+    </div>
+    <div class="notice section-action">
+      <a href="/reseller-packages/" class="button button-secondary">Compare rates and terms</a>
+    </div>
+  </section>
 
-        <!-- VIP -->
-        <article class="glass rounded-xl p-8 flex flex-col h-full">
-          <h3 class="text-2xl font-bold font-['Clash_Display'] mb-2">Pack VIP</h3>
-          <div class="text-4xl font-bold mb-6">1000 €</div>
-          <ul class="space-y-4 mb-8 flex-grow text-gray-400">
-            <li>✓ 100 Crédits (soit 10€ / crédit)</li>
-            <li class="text-indigo-400 font-bold">✓ URL DNS Personnalisée</li>
-            <li>✓ Création de sous-revendeurs</li>
-            <li>✓ Panel de gestion complet</li>
-          </ul>
-          <a href="https://wa.me/212782389820?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20VIP%20%281000%E2%82%AC%20-%20Marque%20Blanche%29%20pour%20devenir%20revendeur." target="_blank" rel="noopener noreferrer" class="w-full glass py-3 rounded-lg font-bold transition hover:bg-white/10 block text-center">Commander le VIP</a>
-        </article>
+  <section class="section section-shell" aria-labelledby="workflow-title">
+    <div class="section-split">
+      <SectionHeading id="workflow-title" eyebrow="A controlled route to launch" title="How the reseller process works" intro="Follow a practical step-by-step process from initial comparison to customer onboarding." />
+      <div class="workflow-line">
+        {workflow.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
       </div>
-    </section>
+    </div>
+    <a href="/become-a-reseller/" class="button button-primary section-action">Prepare a reseller application</a>
+  </section>
 
-    <!-- Comment créer un panel IPTV & Rentabilité Section -->
-    <section class="max-w-4xl mx-auto py-12 px-4 text-center">
-      <h2 class="text-3xl font-bold text-white mb-6">Comment créer un panel IPTV et maximiser votre rentabilité revendeur IPTV ?</h2>
-      <p class="text-lg text-gray-300 leading-relaxed">Beaucoup se demandent <strong>comment créer un panel IPTV</strong> en partant de zéro. Avec notre infrastructure, vous n'avez rien à configurer. Nous fournissons le tableau de bord prêt à l'emploi. La <strong>rentabilité revendeur IPTV</strong> repose sur une mathématique simple : achetez vos crédits en gros à bas prix, fixez vos propres tarifs, et conservez 100% de la marge sur chaque vente.</p>
-    </section>
-
-    <!-- FAQPage Schema JSON-LD (merged, homepage-only) -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Comment démarrer une activité de revendeur IPTV ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pour démarrer une activité de revendeur IPTV, choisissez un pack de crédits (Starter ou Pro) sur GetIPTVPanel. Vous recevrez des accès à un panel de gestion. Utilisez ce panel pour générer des tests de 24h gratuits et trouvez vos premiers clients via votre réseau, Telegram ou TikTok."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les meilleurs fournisseurs de panel IPTV disponibles en France ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "GetIPTVPanel se distingue comme le fournisseur de panel IPTV le plus fiable en France, offrant une sélection internationale massive (+20 000 chaînes), une infrastructure Anti-FAI contre les blocages opérateurs, et des marges bénéficiaires élevées pour les revendeurs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quelles sont les fonctionnalités essentielles d'un panel IPTV ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les outils essentiels pour un gestionnaire de services IPTV incluent : la création d'abonnements via API Xtream Codes, la génération d'essais gratuits avant abonnement, la gestion des sous-revendeurs, et une URL DNS personnalisée (Marque Blanche)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Légalité de la revente de services de streaming en France ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "L'infrastructure d'un panel IPTV est légale. Toutefois, la revente de contenus protégés par des droits d'auteur sans licence est interdite. Il est de la responsabilité du revendeur de s'assurer de la conformité des flux qu'il commercialise."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qu'est-ce qu'un crédit sur le panel GetIPTVPanel ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Un crédit correspond à un abonnement de 12 mois pour un client. Vous pouvez également générer des accès de 1, 3 ou 6 mois depuis votre panel de gestion."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Les tests de 24 heures sont-ils payants ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, avec GetIPTVPanel, vous pouvez générer un nombre illimité de codes de test de 24h sans consommer vos crédits."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- FAQ Section: Questions fréquentes sur la revente IPTV -->
-    <section class="py-20 px-4 max-w-4xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold font-['Clash_Display'] mb-4">
-          Questions fréquentes sur la revente IPTV
-        </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Tout ce que vous devez savoir avant de lancer votre activité de revendeur IPTV.
-        </p>
+  <section class="section dark-section" aria-labelledby="calculator-preview-title">
+    <div class="section-shell">
+      <div class="calculator-promo">
+        <div>
+          <p class="eyebrow">Business estimate</p>
+          <h2 id="calculator-preview-title">Estimate the numbers before buying credits</h2>
+          <p>Use the GBP calculator to model revenue, credit cost, payment fees, refund allowance, customer acquisition cost and other operating expenses. The result is an estimate, not a promise. It helps you see the break-even point and the effect of unsold credits before you choose an order size.</p>
+          <a href="/profit-calculator/" class="button button-primary section-action" data-event="profit_calculator_start" data-placement="homepage-preview">Open the reseller calculator</a>
+        </div>
+        <div class="calculator-preview-metrics" aria-label="Calculator inputs and outputs">
+          <div><span>Package cost</span><strong>Your quote</strong></div>
+          <div><span>Customer price</span><strong>Your input</strong></div>
+          <div><span>Operating costs</span><strong>Your inputs</strong></div>
+          <div><span>Break-even</span><strong>Calculated</strong></div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="space-y-6">
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Comment démarrer une activité de revendeur IPTV ?</h3>
-          <p class="text-gray-400">Pour démarrer une activité de revendeur IPTV, choisissez un pack de crédits (Starter ou Pro) sur GetIPTVPanel. Vous recevrez des accès à un panel de gestion. Utilisez ce panel pour générer des tests de 24h gratuits et trouvez vos premiers clients via votre réseau, Telegram ou TikTok.</p>
+  <section class="section section-shell" aria-labelledby="who-this-is-for-title">
+    <SectionHeading id="who-this-is-for-title" eyebrow="Audience suitability" title="Who this is for" intro="Designed for operators who require structured customer management and clear commercial terms." />
+    <div class="rate-grid">
+      {personas.map((persona) => (
+        <article class="rate-card">
+          <h3>{persona.title}</h3>
+          <p>{persona.text}</p>
         </article>
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Quels sont les meilleurs fournisseurs de panel IPTV disponibles en France ?</h3>
-          <p class="text-gray-400">GetIPTVPanel se distingue comme le fournisseur de panel IPTV le plus fiable en France, offrant une sélection internationale massive (+20 000 chaînes), une infrastructure Anti-FAI contre les blocages opérateurs, et des marges bénéficiaires élevées pour les revendeurs.</p>
-        </article>
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Quelles sont les fonctionnalités essentielles d'un panel IPTV ?</h3>
-          <p class="text-gray-400">Les outils essentiels pour un gestionnaire de services IPTV incluent : la création d'abonnements via API Xtream Codes, la génération d'essais gratuits avant abonnement, la gestion des sous-revendeurs, et une URL DNS personnalisée (Marque Blanche).</p>
-        </article>
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Légalité de la revente de services de streaming en France ?</h3>
-          <p class="text-gray-400">L'infrastructure d'un panel IPTV est légale. Toutefois, la revente de contenus protégés par des droits d'auteur sans licence est interdite. Il est de la responsabilité du revendeur de s'assurer de la conformité des flux qu'il commercialise.</p>
-        </article>
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Qu'est-ce qu'un crédit sur le panel ?</h3>
-          <p class="text-gray-400">Un crédit correspond à un abonnement de 12 mois pour un client. Vous pouvez également générer des accès de 1, 3 ou 6 mois.</p>
-        </article>
-        <article class="glass rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-2">Les tests de 24 heures sont-ils payants ?</h3>
-          <p class="text-gray-400">Non, avec GetIPTVPanel, vous pouvez générer un nombre illimité de codes de test de 24h sans consommer vos crédits.</p>
-        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section surface-section" aria-labelledby="b2c-bridge-title">
+    <div class="section-shell section-split">
+      <div>
+        <SectionHeading id="b2c-bridge-title" eyebrow="Secondary route" title="Only need one subscription?" intro="The main offer is a reseller panel. When an individual UK package is verified and available, the individual page will show the supported territory, devices, price, renewal and refund terms." />
+        <a href="/individual-subscription/" class="button button-secondary section-action">Check individual availability</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="section section-shell" aria-labelledby="faq-title">
+    <div class="section-split">
+      <SectionHeading id="faq-title" eyebrow="Reseller FAQ" title="Frequently asked questions" />
+      <div class="faq-list">
+        <details><summary>What does one reseller credit activate?</summary><p>One credit activates one 12-month account under the applicable panel terms. Confirm the exact account scope and any restrictions in the written quote.</p></details>
+        <details><summary>What is the minimum reseller order?</summary><p>The published minimum is 10 credits. A different quote may apply to larger orders.</p></details>
+        <details><summary>Does panel access include content distribution rights?</summary><p>No. Buying panel access or credits does not grant rights to distribute third-party programmes, channels, films, sports or other protected content. The operator remains responsible for holding the permissions required in every territory served.</p></details>
+        <details><summary>Are earnings guaranteed?</summary><p>No. Revenue, margin and customer retention depend on your selling price, operating costs, lawful offer, support quality and demand. The calculator is an estimate only.</p></details>
+        <details><summary>How do I choose between the panel options?</summary><p>Compare the verified features, rate, minimum order, customer workflow, support route and complete written terms. Do not choose on unit price alone.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight section-shell" aria-labelledby="final-cta-title">
+    <div class="cta-panel">
+      <p class="eyebrow">Next step</p>
+      <h2 id="final-cta-title">Compare the reseller options with the terms visible</h2>
+      <p>Review the rates first, then request a written quote for the panel and order size you intend to use.</p>
+      <div class="hero-actions centered-actions">
+        <a href="/reseller-packages/" class="button button-primary">Compare reseller packages</a>
+        <a href={resellerWhatsApp} class="button button-secondary" data-event="whatsapp_click" data-placement="final-cta">Request a written quote</a>
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  tone?: 'light' | 'dark';
+  compact?: boolean;
+}
+
+const { tone = 'light', compact = false } = Astro.props;
+---
+
+<span class:list={['brand-lockup', `brand-lockup-${tone}`, compact && 'brand-lockup-compact']}>
+  <img
+    class="brand-logo"
+    src="/getiptvlogo.png"
+    width="388"
+    height="121"
+    alt=""
+    decoding="async"
+  />
+  {!compact && <span class="brand-tagline">UK reseller operations</span>}
+</span>

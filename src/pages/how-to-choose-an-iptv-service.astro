@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { pageMeta } from '../config/pages';
+
+const meta = pageMeta['/how-to-choose-an-iptv-service'];
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'How to choose an IPTV service', path: '/how-to-choose-an-iptv-service' }];
+
+const checklistItems = [
+  {
+    title: '1. Identify the legal supplier',
+    text: 'Look for the contracting business name, contact details, terms, privacy information and a clear description of what is being supplied. A polished website, app login or payment receipt does not prove that the supplier holds the rights to distribute third-party content.'
+  },
+  {
+    title: '2. Check the rights and territory',
+    text: 'Ask which party owns or licenses the relevant content and whether the permission covers the United Kingdom. For reseller offers, confirm that the permission also allows resale or sublicensing. Generic statements such as “fully legal” are not evidence.'
+  },
+  {
+    title: '3. Confirm the exact package',
+    text: 'The service should state what is included without relying on vague claims such as complete channel lists or every sporting match. Availability may depend on territory, package and rights. Ask for a written package description before paying.'
+  },
+  {
+    title: '4. Check your device and official installation route',
+    text: 'Confirm: Supported device, Supported operating-system version, Exact player name and publisher, Official application-store route, Login format, Minimum internet connection guidance, Who handles player support. Do not install an unverified APK merely because a seller provides a download code.'
+  },
+  {
+    title: '5. Read the full price and renewal terms',
+    text: 'Check: Price and currency, Tax or payment charges, Billing frequency, Automatic renewal, Cancellation method, Refund conditions, Trial conversion, Billing descriptor. The checkout price and the page price should match.'
+  },
+  {
+    title: '6. Test the support route',
+    text: 'Before buying a long plan, ask one specific question and assess whether the answer is clear. The supplier should explain which issues belong to the player, account provider, payment provider or reseller.'
+  },
+  {
+    title: '7. Look for evidence, not decorative trust',
+    text: 'Useful evidence includes: Real product screenshots, A clear company identity, Written package terms, Supported-device documentation, A functioning support route, Specific, verifiable customer evidence, Accurate status or incident information. A logo wall, fake counter or anonymous five-star quote is not evidence.'
+  },
+  {
+    title: '8. Pause when the promise is broader than the proof',
+    text: 'Elevated risk signs include: Almost every premium service in one cheap package, Claims that nothing ever buffers, No named seller, No refund route, Crypto-only payment with no clear terms, Evasion or network-circumvention instructions, Unofficial APK downloads, Pressure to pay before receiving written terms.'
+  }
+];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} mobileCta={{ href: '/individual-subscription/', label: 'Check individual availability', event: 'individual_availability_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="UK buyer checklist"
+      title="How to Choose an IPTV Service in the UK"
+      intro="Do not choose on channel counts, superlatives or a low headline price. Verify the rights, territory, supported devices, billing terms and support process before paying."
+      primaryHref="#checklist"
+      primaryLabel="Use the eight-point checklist"
+      secondaryHref="/individual-subscription/"
+      secondaryLabel="Check individual availability"
+    />
+  </div>
+
+  <section id="checklist" class="section surface-section" aria-labelledby="checklist-title">
+    <div class="section-shell">
+      <SectionHeading id="checklist-title" eyebrow="Eight-Point Checklist" title="What to verify before paying" />
+      <div class="card-grid card-grid-2">
+        {checklistItems.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-shell" aria-labelledby="next-step-title">
+    <div class="section-split">
+      <SectionHeading id="next-step-title" eyebrow="Next Step" title="Choose the relevant next step" intro="Select the option that matches your intention." />
+      <div class="card-grid card-grid-2">
+        <article class="card">
+          <h3>Need one verified subscription?</h3>
+          <p>Check the individual page for current UK availability and terms.</p>
+          <a href="/individual-subscription/" class="button button-primary" style="margin-top: 1rem;">Check individual availability</a>
+        </article>
+        <article class="card">
+          <h3>Planning to manage customer accounts?</h3>
+          <p>Compare the reseller panel and credit packages.</p>
+          <a href="/reseller-packages/" class="button button-secondary" style="margin-top: 1rem;">Compare reseller packages</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>

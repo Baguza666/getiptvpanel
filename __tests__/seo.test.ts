@@ -1,52 +1,34 @@
+import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { expect, test } from 'vitest';
-import * as fs from 'fs';
-import * as path from 'path';
+import IndexPage from '../src/pages/index.astro';
+import LegalPage from '../src/pages/is-iptv-legal-in-the-uk.astro';
 
-test('Homepage injects valid JSON-LD structured data into the DOM', async () => {
-    const htmlPath = path.resolve(__dirname, '../dist/index.html');
-    if (!fs.existsSync(htmlPath)) {
-        console.warn('dist/index.html not found, skipping validation. Run build first.');
-        return;
-    }
-    const html = fs.readFileSync(htmlPath, 'utf-8');
+const extractJsonLd = (html: string) => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .flatMap((match) => {
+    const value = JSON.parse(match[1]);
+    return value['@graph'] ?? [value];
+  });
 
-    // Assert that the script tags exist
-    expect(html).toContain('type="application/ld+json"');
+test('homepage has UK metadata, a self-canonical and safe global schema', async () => {
+  const container = await AstroContainer.create();
+  const html = await container.renderToString(IndexPage);
+  expect(html).toContain('<html lang="en-GB"');
+  expect(html).toContain('<title>IPTV Reseller UK | Reseller Panel &amp; Credit Packages</title>');
+  expect(html).toContain('<link rel="canonical" href="https://getiptvpanel.com/">');
+  expect((html.match(/<h1[ >]/g) || [])).toHaveLength(1);
 
-    // Extract JSON payload from script tags (primitive approach without DOMParser)
-    const jsonMatches = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
-    expect(jsonMatches).not.toBeNull();
-    // At least 3 objects should be present: Organization, FAQPage, SoftwareApplication
-    expect(jsonMatches!.length).toBeGreaterThanOrEqual(3);
+  const schema = extractJsonLd(html);
+  expect(schema.some((item) => item['@type'] === 'Organization')).toBe(true);
+  expect(schema.some((item) => item['@type'] === 'WebSite')).toBe(true);
+  expect(schema.some((item) => ['Product', 'Offer', 'Review', 'AggregateRating'].includes(item['@type']))).toBe(false);
+});
 
-    const jsonList = jsonMatches!.map(match => {
-        const content = match.replace(/<script type="application\/ld\+json">|<\/script>/g, '');
-        return JSON.parse(content);
-    });
-
-    const types = jsonList.map(j => j['@type']);
-
-    // Assert required schema types
-    expect(types).toContain('Organization');
-    expect(types).toContain('FAQPage');
-    expect(types).toContain('SoftwareApplication');
-
-    // Assert Organization rules
-    const org = jsonList.find(j => j['@type'] === 'Organization');
-    expect(org.name).toBe('getiptvpanel');
-    expect(org.url).toBe('https://getiptvpanel.com');
-
-    // Assert FAQ rules
-    const faq = jsonList.find(j => j['@type'] === 'FAQPage');
-    expect(faq.mainEntity.length).toBeGreaterThanOrEqual(2);
-    expect(faq.mainEntity[0]['@type']).toBe('Question');
-
-    // Assert Pricing rules
-    const app = jsonList.find(j => j['@type'] === 'SoftwareApplication');
-    expect(app.offers.length).toBe(3);
-    const prices = app.offers.map((o: any) => o.price);
-    expect(prices).toContain('140');
-    expect(prices).toContain('600');
-    expect(prices).toContain('1000');
-    expect(app.offers[0].priceCurrency).toBe('EUR');
+test('legal page stays noindex without schema until qualified review is recorded', async () => {
+  const container = await AstroContainer.create();
+  const html = await container.renderToString(LegalPage);
+  const schema = extractJsonLd(html);
+  expect(schema).toEqual([]);
+  expect(html).toContain('<meta name="robots" content="noindex, follow">');
+  expect(html).toContain('General information—not legal advice');
+  expect(html).toContain('Independent legal review is not recorded.');
 });

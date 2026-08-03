@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import { pageMeta } from '../../config/pages';
+import { whatsAppHref } from '../../config/contact';
+import { site } from '../../config/site';
+
+const meta = pageMeta['/guides/iptv-smarters-setup'];
+const supportWhatsApp = whatsAppHref('Hello, I need help with an IPTV Smarters setup question.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }, { name: 'IPTV Smarters setup', path: '/guides/iptv-smarters-setup' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} article={{ headline: meta.title, dateModified: '2026-08-03' }} mobileCta={{ href: supportWhatsApp, label: 'Ask for setup help', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Player setup guide"
+      title="How to Set Up IPTV Smarters on a Supported Device"
+      intro="IPTV Smarters is a player application. The player and the content provider are separate. An app-store listing does not verify the rights of a provider whose credentials are entered into the player."
+      primaryHref="#steps"
+      primaryLabel="Follow setup steps"
+      secondaryHref={supportWhatsApp}
+      secondaryLabel="Ask for setup help"
+    />
+  </div>
+
+  <section id="steps" class="section surface-section">
+    <div class="section-shell content-layout">
+      <nav class="contents-nav" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#step1">Step 1: Confirm the supported app</a></li>
+          <li><a href="#step2">Step 2: Add credentials</a></li>
+          <li><a href="#errors">Common errors</a></li>
+          <li><a href="#support">Support boundaries</a></li>
+        </ol>
+      </nav>
+      <article class="prose">
+        <div class="meta-row">
+          <span>Updated {site.updatedDate}</span>
+          <span>Official Store Route Only</span>
+        </div>
+
+        <h2 id="step1">Step 1: Confirm the supported app</h2>
+        <ol>
+          <li>Ask the provider for the exact player name and supported device.</li>
+          <li>Open the device’s official application store.</li>
+          <li>Compare the publisher, privacy policy, update history and device compatibility.</li>
+          <li>Install only when the listing matches the documented route.</li>
+        </ol>
+        <div class="notice warning-notice">This guide does not provide unofficial APK files.</div>
+
+        <h2 id="step2">Step 2: Add the authorised credentials</h2>
+        <ol>
+          <li>Open the login or playlist option named by the provider.</li>
+          <li>Enter the account label, user identifier, password and server address exactly as supplied.</li>
+          <li>Save the account.</li>
+          <li>Allow categories and guide data to load.</li>
+          <li>Remove the account before selling or transferring the device.</li>
+        </ol>
+
+        <h2 id="errors">Common errors</h2>
+        <h3>Invalid details</h3>
+        <p>Check capitalisation, spaces and the complete server address. Ask the provider to confirm account status without sending the password in a public message.</p>
+
+        <h3>The account loads but content does not</h3>
+        <p>Record the affected section, time, device model, operating-system version and player version. This helps separate a device problem from an account or package issue.</p>
+
+        <h3>Wrong or unverified application</h3>
+        <p>Remove the unverified application and ask for an official-store listing that identifies the expected publisher. Do not replace it with a sideloaded copy.</p>
+
+        <h2 id="support">Support boundaries</h2>
+        <p>Contact the player publisher for store, installation and interface issues.</p>
+        <p>Contact the authorised provider for credentials, account status and package data.</p>
+        <div class="notice">GetIPTVPanel support needs a customer reference and diagnostic context, not the complete credential set.</div>
+
+        <div class="card-grid card-grid-2 prose-actions" style="margin-top: 2rem;">
+          <a href={supportWhatsApp} class="button button-primary" data-event="whatsapp_click" data-origin="smarters-guide">Ask for setup help</a>
+          <a href="/reseller-panel/" class="button button-secondary" data-event="reseller_upsell_click" data-origin="smarters-guide">Explore the reseller workflow</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

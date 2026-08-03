@@ -10,27 +10,50 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest run"
-  },
-  "overrides": {
-    "vite": "^7.0.0"
+    "check": "astro check",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:site": "node scripts/check-built-site.mjs",
+    "seo:audit": "npm run build && npm run test:site",
+    "seo:check-routes": "node scripts/check-built-site.mjs routes",
+    "seo:check-sitemap": "node scripts/check-built-site.mjs sitemap",
+    "seo:check-metadata": "node scripts/check-built-site.mjs metadata",
+    "seo:check-canonicals": "node scripts/check-built-site.mjs canonicals",
+    "seo:check-schema": "node scripts/check-built-site.mjs schema",
+    "seo:check-links": "node scripts/check-built-site.mjs links",
+    "compliance:check": "node scripts/check-built-site.mjs compliance",
+    "compliance:report": "node scripts/generate-compliance-report.mjs",
+    "seo:inventory": "node scripts/generate-seo-inventory.mjs",
+    "smoke:production": "node scripts/smoke-production.mjs",
+    "test:e2e": "PUBLIC_GA4_ID=G-TEST123 PUBLIC_ANALYTICS_ENVIRONMENT=production npm run build && playwright test && npm run build",
+    "test:prelaunch": "npm run qa",
+    "qa": "npm run check && npm run lint && npm test && npm run build && npm run test:site && npm run test:e2e"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.3",
-    "@tailwindcss/vite": "^4.2.2",
+    "@astrojs/react": "^6.0.2",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.8",
+    "astro": "^7.1.6",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.12.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@types/node": "^26.1.2",
+    "eslint": "^10.8.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "globals": "^17.9.0",
     "jsdom": "^29.0.2",
-    "vitest": "^4.1.4"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
   }
 }

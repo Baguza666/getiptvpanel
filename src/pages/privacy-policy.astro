@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import { whatsAppHref } from '../config/contact';
+import { pageMeta } from '../config/pages';
+import { site } from '../config/site';
+const meta = pageMeta['/privacy-policy'];
+const privacyWhatsApp = whatsAppHref('Hello, I have a privacy question about GetIPTVPanel.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Privacy policy', path: '/privacy-policy' }];
+---
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs}>
+  <Breadcrumbs items={breadcrumbs} /><PageHero eyebrow="Privacy" title="Privacy Policy" intro="This policy explains the information used by the public website, analytics consent and WhatsApp reseller enquiry workflow." />
+  <section class="section surface-section"><div class="section-shell prose"><div class="meta-row"><span>Updated {site.updatedDate}</span></div>
+    <h2>Who handles the enquiry</h2><p>GetIPTVPanel receives messages that visitors choose to send through WhatsApp. <a href={privacyWhatsApp}>Ask a privacy question on WhatsApp</a>.</p>
+    <h2>Information entered into the application builder</h2><p>The reseller form may include a name, WhatsApp number, country, panel interest, experience, expected customer band and budget band. These values remain in the browser until WhatsApp opens. The website does not send them to a webhook or CRM.</p>
+    <h2>WhatsApp</h2><p>The application summary is prepared locally and is not placed in the WhatsApp URL. The visitor chooses whether to copy it, open WhatsApp, paste it and press Send. WhatsApp and its provider process any conversation the visitor sends under their own privacy terms.</p>
+    <h2>Analytics</h2><p>Analytics loads only when a public GA4 identifier is configured and the visitor grants consent. Tracked events use page and CTA context; names, phone numbers, credentials and prepared WhatsApp message contents are excluded.</p>
+    <h2>Your choices</h2><p>You may ask for access, correction, deletion or restriction, or withdraw analytics consent in the browser storage controls. Whether a request applies depends on the legal basis and applicable UK data-protection law.</p>
+  </div></section>
+</Layout>

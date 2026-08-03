@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import { pageMeta } from '../../config/pages';
+import { whatsAppHref } from '../../config/contact';
+import { site } from '../../config/site';
+
+const meta = pageMeta['/guides/fire-tv-setup'];
+const supportWhatsApp = whatsAppHref('Hello, I would like to ask about Fire TV device support.');
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }, { name: 'Fire TV setup', path: '/guides/fire-tv-setup' }];
+---
+
+<Layout title={meta.title} description={meta.description} breadcrumbs={breadcrumbs} article={{ headline: meta.title, dateModified: '2026-08-03' }} mobileCta={{ href: supportWhatsApp, label: 'Ask about Fire TV support', event: 'whatsapp_click' }}>
+  <Breadcrumbs items={breadcrumbs} />
+  <div class="page-hero-dark-wrap">
+    <PageHero
+      eyebrow="Amazon Appstore route"
+      title="How to Set Up an IPTV Player on Fire TV Safely"
+      intro="Use this guide only when the authorised provider supports Fire TV and the required player is available through the Amazon Appstore for the device and account region."
+      primaryHref="#steps"
+      primaryLabel="Follow setup steps"
+      secondaryHref={supportWhatsApp}
+      secondaryLabel="Ask about Fire TV support"
+    />
+  </div>
+
+  <section id="steps" class="section surface-section">
+    <div class="section-shell content-layout">
+      <nav class="contents-nav" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#before">Before you start</a></li>
+          <li><a href="#step1">Step 1: Find the supported player</a></li>
+          <li><a href="#step2">Step 2: Add credentials</a></li>
+          <li><a href="#errors">Troubleshooting</a></li>
+          <li><a href="#unsupported">When the device is unsupported</a></li>
+        </ol>
+      </nav>
+      <article class="prose">
+        <div class="meta-row">
+          <span>Updated {site.updatedDate}</span>
+          <span>Amazon Appstore Route Only</span>
+        </div>
+
+        <h2 id="before">Before you start</h2>
+        <p>Ask the provider for:</p>
+        <ul>
+          <li>Exact player name</li>
+          <li>Publisher</li>
+          <li>Supported Fire TV models</li>
+          <li>Supported Fire OS version</li>
+          <li>Login method</li>
+          <li>Account credentials</li>
+          <li>Support route</li>
+        </ul>
+        <div class="notice">Availability may differ by device model, Amazon account region and store catalogue.</div>
+
+        <h2 id="step1">Step 1: Find the supported player</h2>
+        <ol>
+          <li>From the Fire TV home screen, choose <strong>Find</strong> or use Alexa Voice Search.</li>
+          <li>Search for the exact supported player.</li>
+          <li>Open the listing.</li>
+          <li>Verify the name, publisher and device compatibility.</li>
+          <li>Select <strong>Get</strong> to install it.</li>
+        </ol>
+        <div class="notice warning-notice">Do not switch to an unofficial installation route when the verified player is unavailable.</div>
+
+        <h2 id="step2">Step 2: Add the provider credentials</h2>
+        <ol>
+          <li>Open the installed player.</li>
+          <li>Choose the login method documented by the provider.</li>
+          <li>Enter the server and account details exactly.</li>
+          <li>Allow the initial data load to complete.</li>
+          <li>Confirm account status before changing player settings.</li>
+        </ol>
+        <p class="notice-subtle">The player does not include a content package by itself.</p>
+
+        <h2 id="errors">Troubleshooting</h2>
+        <h3>The app does not appear</h3>
+        <p>Check spelling, Fire OS version, Amazon account region and whether the provider supports the device.</p>
+
+        <h3>The app installs but login fails</h3>
+        <p>Confirm the account status and credential format with the provider. Share the error wording, device model and app version—not the password.</p>
+
+        <h3>Playback or guide data is missing</h3>
+        <p>Check whether all sections or only one category is affected. Confirm device time and connectivity, then give the provider a timestamp and account reference.</p>
+
+        <h2 id="unsupported">When the device is unsupported</h2>
+        <div class="notice warning-notice">
+          When the verified player is not available in the official store, treat the device as unsupported for this setup route. Ask for another officially supported device or player.
+        </div>
+
+        <div class="card-grid card-grid-2 prose-actions" style="margin-top: 2rem;">
+          <a href={supportWhatsApp} class="button button-primary" data-event="whatsapp_click" data-origin="fire-tv-guide">Ask about Fire TV support</a>
+          <a href="/reseller-panel/" class="button button-secondary" data-event="reseller_upsell_click" data-origin="fire-tv-guide">Plan a reseller support workflow</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>
